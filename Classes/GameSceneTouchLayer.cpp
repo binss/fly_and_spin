@@ -9,6 +9,10 @@
 #include "GameSceneTouchLayer.h"
 #include "CircleAction.h"
 #include "SceneManager.h"
+#include "GameScene.h"
+#include "LightningSprite.h"
+#include "BrickSprite.h"
+#include "BirdSprite.h"
 
 //Layer * GameSceneTouchLayer::create(){
 //    Layer *layer = GameSceneTouchLayer::init();
@@ -20,6 +24,8 @@
 #define MAX_BARRIER 100
 #define BARRIER_TAG 10
 #define RADIUS 250
+#define LIGHTNING_A_TAG 20
+#define LIGHTNING_B_TAG 21
 
 bool GameSceneTouchLayer::init()
 {
@@ -48,43 +54,69 @@ bool GameSceneTouchLayer::init()
     
     Size visibleSize = Director::getInstance()->getVisibleSize();
 
-    auto bird_A = Sprite::create("bird_A.png");
-    bird_A->setScale(0.3);
-    bird_A->setTag(BIRD_A_TAG);
+    BirdSprite * bird_A = BirdSprite::createWithType(1);
     bird_A->setPosition(Vec2(visibleSize.width/2 - RADIUS, visibleSize.height/2 - RADIUS));
-    addBoxBodyForSprite(bird_A, 0.3, true);
     addChild(bird_A, 30);
     
-    auto bird_B = Sprite::create("bird_B.png");
-    bird_B->setScale(0.3);
-    bird_B->setTag(BIRD_B_TAG);
-    bird_B->setPosition(Vec2(visibleSize.width/2 + RADIUS, visibleSize.height/2 - RADIUS));
-    addBoxBodyForSprite(bird_B, 0.3, true);
-    addChild(bird_B, 30);
-    barrier_vector = Vector<Sprite*>(MAX_BARRIER);
-    old_direction = 1;
     
+    BirdSprite * bird_B = BirdSprite::createWithType(2);
+    bird_B->setPosition(Vec2(visibleSize.width/2 + RADIUS, visibleSize.height/2 - RADIUS));
+    addChild(bird_B, 30);
+    
+    barrier_vector = Vector<Sprite*>(MAX_BARRIER);
+    
+    
+    score = 0;
+
     this->schedule(schedule_selector(GameSceneTouchLayer::createBarrier),3.0f);
 
     this->scheduleUpdate();
+    
 
     return true;
 }
+
+
 
 bool GameSceneTouchLayer::onContactBegin(PhysicsContact& contact){
     CCLOG("crash");
     auto node_A = (Sprite*)contact.getShapeA()->getBody()->getNode();
     auto node_B = (Sprite*)contact.getShapeB()->getBody()->getNode();
     
+    Sprite * bird_node;
+    Sprite * other_node;
     if (node_A == NULL || node_B == NULL)
     {
         return true;
     }
-    // 如果是鸟
+    // 判断鸟节点
     if (node_A->getTag() >= BIRD_A_TAG){
-        CCLOG("bird");
+        bird_node = node_A;
+        other_node = node_B;
     }
-    SceneManager::sharedSceneManager()->changeScene(SceneManager::en_GameoverScene);
+    else{
+        bird_node = node_B;
+        other_node = node_A;
+    }
+    // 如果是闪电
+    if( other_node->getTag() == LIGHTNING_A_TAG){
+        if( bird_node->getTag() == BIRD_A_TAG){
+            CCLOG("get power");
+        }
+        else{
+            CCLOG("dead");
+        }
+    }
+    else if( other_node->getTag() == LIGHTNING_B_TAG){
+        if( bird_node->getTag() == BIRD_B_TAG){
+            CCLOG("get power");
+        }
+        else{
+            CCLOG("dead");
+        }
+    }
+    
+//    SceneManager::sharedSceneManager()->changeScene(SceneManager::en_GameoverScene);
 
     return true;
 }
@@ -92,32 +124,28 @@ bool GameSceneTouchLayer::onContactBegin(PhysicsContact& contact){
 void GameSceneTouchLayer::createBarrier(float dt)
 {
     Size visibleSize = Director::getInstance()->getVisibleSize();
-    char* pic;
-    int tag;
     int randomType = CCRANDOM_0_1() * 100 + 1;
-    if (randomType < 30)
+    if (randomType < 40)
     {
-        tag = 10;
-        pic = "barrier_short.png";     //砖A
-        auto *barrier = Sprite::create(pic);
-        barrier->setScale(0.8f);
-        barrier->setTag(tag);
-        barrier->setPosition(Vec2(visibleSize.width/2 - barrier->getContentSize().width * 0.4 ,visibleSize.height));
+//        BrickSprite *barrier = BrickSprite::createWithType(1);
+//        barrier_vector.pushBack(barrier);
+//        addChild(barrier, 30);
+        LightningSprite *lightning = LightningSprite::create();
+        addChild(lightning, 30);
+    }
+    else if(randomType < 50){
+        BrickSprite *barrier = BrickSprite::createWithType(3);
         barrier_vector.pushBack(barrier);
-        addBoxBodyForSprite(barrier, 0.8, false);
-
+        addChild(barrier, 30);
+    }
+    else if (randomType < 80){
+        BrickSprite *barrier = BrickSprite::createWithType(4);
+        barrier_vector.pushBack(barrier);
         addChild(barrier, 30);
     }
     else{
-        tag = 11;
-        pic = "barrier_long.png";     //砖Long
-        auto *barrier = Sprite::create(pic);
-        barrier->setScale(0.8f);
-        barrier->setTag(tag);
-        barrier->setPosition(Vec2(barrier->getContentSize().width * 0.4, visibleSize.height));
+        BrickSprite *barrier = BrickSprite::createWithType(2);
         barrier_vector.pushBack(barrier);
-        addBoxBodyForSprite(barrier, 0.8, false);
-
         addChild(barrier, 30);
     }
     
@@ -125,57 +153,15 @@ void GameSceneTouchLayer::createBarrier(float dt)
 
 void GameSceneTouchLayer::update(float dt)
 {
+    score ++;
+    GameScene::shareGameScene()->menuLayer->setScore(score);
+
     for(auto barrier : barrier_vector)
     {
-//        log("sprite tag = %d", barrier->getTag());
-        barrier->setPosition(Vec2(barrier->getPosition().x, barrier->getPosition().y-5));
         if(barrier->getPosition().y < -barrier->getContentSize().height){
             garbageCollection(barrier);
         }
     }
-//    CCLOG("%d", barrier_vector.size());
-//    CCARRAY_FOREACH(crashArray,obj)
-//    {
-//        CCSprite *object = (CCSprite*)obj;
-//        object->setPositionX(object->getPosition().x-1);
-//        
-//        if(object->getPosition().x >= 49 && object->getPosition().x <= 51 && actionNum == ACTION_RUN)
-//        {
-//            switch(object->getTag())
-//            {
-//                case 3:
-//                {
-//                    CCLOG("gameOver");
-//                    gameOver();
-//                    return;
-//                }
-//                case 1: score++;break;
-//                case 2: score += 10;break;
-//            }
-//            SimpleAudioEngine::sharedEngine()->playEffect("sound/coin.mp3");
-//            char char_score[6];
-//            itoa(score, char_score, 10);
-//            GameScene::shareGameScene()->menuLayer->setScore(char_score);
-//            rubbishCollection(object);
-//            
-//            continue;
-//        }
-//        if(object->getPosition().x < 0)
-//            rubbishCollection(object);
-//    }
-//    
-//    if(backgroundCopy ->getPosition().x>=0)
-//    {
-//        background->setPosition(ccp(background->getPosition().x-1, 0));
-//        backgroundCopy->setPosition(ccp(backgroundCopy->getPosition().x-1, 0));
-//        shop->setPosition(ccp(shop->getPosition().x-1.5, shop->getPosition().y));
-//        ground->setPosition(ccp(ground->getPosition().x-1, 0));
-//        groundCopy->setPosition(ccp(groundCopy->getPosition().x-1, 0));
-//    }
-//    else
-//    {
-//        resetBackground();
-//    }
 }
 
 
@@ -190,23 +176,11 @@ void GameSceneTouchLayer::garbageCollection(Ref *object){
     }
 }
 
-void GameSceneTouchLayer::addBoxBodyForSprite(Sprite* sprite, float scale, bool dynamic)
-{
-    auto body = PhysicsBody::createBox(sprite->getContentSize() * scale);
-    body->setDynamic(dynamic);
-//    body->setGroup(1);
-    body->setCategoryBitmask(1);
-    body->setCollisionBitmask(1);
-    body->setContactTestBitmask(1);
-    sprite->setPhysicsBody(body);
-}
-
 void GameSceneTouchLayer::onEnter(){
     Layer::onEnter();
 
     Size visibleSize = Director::getInstance()->getVisibleSize();
 
-    
     CCLOG("Enter layer");
 }
 
@@ -223,14 +197,9 @@ bool GameSceneTouchLayer::onTouchBegan(Touch* touch, Event  *event)
         CCLOG("right span");
         direction = 1;
     }
-    if(direction != old_direction){
-        getChildByTag(BIRD_A_TAG)->runAction(RotateBy::create(0.1, 180));
-        getChildByTag(BIRD_B_TAG)->runAction(RotateBy::create(0.1, 180));
+    dynamic_cast<BirdSprite*>(getChildByTag(BIRD_A_TAG))->spin(direction);
+    dynamic_cast<BirdSprite*>(getChildByTag(BIRD_B_TAG))->spin(direction);
 
-    }
-
-    getChildByTag(BIRD_A_TAG)->runAction(CCRepeatForever::create(CircleAction::create(2, Point(visibleSize.width/2 , visibleSize.height/2 - RADIUS), RADIUS, 360, direction)));
-    getChildByTag(BIRD_B_TAG)->runAction(CCRepeatForever::create(CircleAction::create(2, Point(visibleSize.width/2 , visibleSize.height/2 - RADIUS), RADIUS, 360, direction)));
     return true;
 }
 
@@ -238,9 +207,4 @@ void GameSceneTouchLayer::onTouchEnded(cocos2d::Touch *touch, cocos2d::Event *ev
     log("TouchTest onTouchesEnded");
     getChildByTag(BIRD_A_TAG)->stopAllActions();
     getChildByTag(BIRD_B_TAG)->stopAllActions();
-    old_direction = direction;
-
-//    bird->stopAction(repeat_circle);
-//    auto location = touch->getLocation();
-//    CCLOG("%f", location.x);
 }

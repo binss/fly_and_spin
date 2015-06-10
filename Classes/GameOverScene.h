@@ -13,12 +13,16 @@
 #include "cocos2d.h"
 USING_NS_CC;
 
+
 class GameOverScene : public Layer
 {
 public:
     virtual bool init();
     CREATE_FUNC(GameOverScene);
     static Scene* shareGameOverScene();
+    void replayMenuCallback(Ref* pSender);
+    void backMenuCallback(Ref* pSender);
+
 //    void restartGame(CCObject *pSender, TouchEventType type);
 //    void quitGame(CCObject *pSender, TouchEventType type);
 };

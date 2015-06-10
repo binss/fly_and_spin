@@ -13,7 +13,7 @@
 
 USING_NS_CC;
 
-class SceneManager : public CCObject
+class SceneManager : public Ref
 {
 public:
     //以下是场景枚举

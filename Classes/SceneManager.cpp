@@ -38,6 +38,9 @@ bool SceneManager::init()
 
 void SceneManager::changeScene(EnumSceneType scene)
 {
+//    Director::getInstance()->runWithScene(GameOverScene::shareGameOverScene());
+//    return;
+
     switch (scene)
     {
         case en_MainScene:          //游戏主画面
@@ -46,10 +49,12 @@ void SceneManager::changeScene(EnumSceneType scene)
             //如果当前没有在运行的场景的话，加载主场景，否则更换场景
             if(current_scene == NULL)
             {
-                Director::getInstance()->runWithScene(GameScene::createScene());
+                Director::getInstance()->runWithScene(GameScene::shareGameScene());
             }
-            else
-                Director::getInstance()->replaceScene(CCTransitionProgressHorizontal::create(1.0f, GameScene::createScene()));
+            else{
+                GameScene::shareGameScene()->reset();
+                Director::getInstance()->replaceScene(CCTransitionProgressHorizontal::create(1.0f, GameScene::shareGameScene()));
+            }
             break;
         }
 //        case en_GameScene:

@@ -13,6 +13,9 @@
 #include <stdio.h>
 USING_NS_CC;
 
+class GameScene;
+
+
 class GameSceneTouchLayer : public Layer{
 public:
 //    Layer *create();
@@ -26,10 +29,8 @@ public:
     void garbageCollection(Ref *object);
     bool onContactBegin(PhysicsContact& contact);
     Vector<Sprite *> barrier_vector;
-    int old_direction;
     int direction;
-    void addBoxBodyForSprite(Sprite* sprite, float scale, bool dynamic);
-    void gameOver();
+    int score;
 
 //    virtual void ccTouchesMoved(CCSet *pTouches, CCEvent *pEvent);
 //    virtual void ccTouchesEnded(CCSet *pTouches, CCEvent *pEvent);
