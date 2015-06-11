@@ -49,7 +49,7 @@ bool LightningSprite::init(){
     this->runAction(RepeatForever::create(Sequence::create(action, action->reverse(), NULL)));
     
     Size visibleSize = Director::getInstance()->getVisibleSize();
-    int x = CCRANDOM_0_1() * (visibleSize.width -  this->getContentSize().width) + this->getContentSize().width;
+    int x = CCRANDOM_0_1() * (visibleSize.width -  this->getContentSize().width/2) + this->getContentSize().width / 2;
     this->setPosition(Vec2(x, visibleSize.height));
     this->setTag(tag);
 

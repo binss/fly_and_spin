@@ -28,7 +28,6 @@ BirdSprite * BirdSprite::createWithType(int type){
 bool BirdSprite::initWithType(int type){
     std::string path;
     int tag;
-    int mask;
     switch (type) {
         case 1:
             path = "bird_A.png";
@@ -51,8 +50,14 @@ bool BirdSprite::initWithType(int type){
     body->setCollisionBitmask(0);
     body->setContactTestBitmask(0xff);
     this->setPhysicsBody(body);
+    
     old_direction = 1;
     return true;
+}
+
+
+void BirdSprite::becomeSuperBird(){
+    
 }
 
 void BirdSprite::spin(int direction){

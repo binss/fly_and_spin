@@ -12,7 +12,6 @@
 #include "GameScene.h"
 #include "LightningSprite.h"
 #include "BrickSprite.h"
-#include "BirdSprite.h"
 
 //Layer * GameSceneTouchLayer::create(){
 //    Layer *layer = GameSceneTouchLayer::init();
@@ -26,6 +25,7 @@
 #define RADIUS 250
 #define LIGHTNING_A_TAG 20
 #define LIGHTNING_B_TAG 21
+#define BATTERY_TAG 200
 
 bool GameSceneTouchLayer::init()
 {
@@ -54,24 +54,42 @@ bool GameSceneTouchLayer::init()
     
     Size visibleSize = Director::getInstance()->getVisibleSize();
 
-    BirdSprite * bird_A = BirdSprite::createWithType(1);
+    bird_A = BirdSprite::createWithType(1);
     bird_A->setPosition(Vec2(visibleSize.width/2 - RADIUS, visibleSize.height/2 - RADIUS));
     addChild(bird_A, 30);
     
     
-    BirdSprite * bird_B = BirdSprite::createWithType(2);
+    bird_B = BirdSprite::createWithType(2);
     bird_B->setPosition(Vec2(visibleSize.width/2 + RADIUS, visibleSize.height/2 - RADIUS));
     addChild(bird_B, 30);
     
     barrier_vector = Vector<Sprite*>(MAX_BARRIER);
     
-    
+    battery = BatterySprite::create();
+    addChild(battery, 40);
     score = 0;
+
+    streak_A = MotionStreak::create(1.0f, 50, 100, Color3B::RED, "Particles/streak_2.png");
+    streak_B = MotionStreak::create(1.0f, 50, 100, Color3B::BLUE, "Particles/streak_2.png");
+
+    addChild(streak_A);
+    addChild(streak_B);
 
     this->schedule(schedule_selector(GameSceneTouchLayer::createBarrier),3.0f);
 
     this->scheduleUpdate();
+
     
+//    auto _emitter = ParticleFlower::create();
+//    addChild(_emitter, 10);
+//    _emitter->setTexture(Director::getInstance()->getTextureCache()->addImage("Particles/stars.png"));
+//    _emitter->setLifeVar(0);
+//    _emitter->setLife(10);
+//    _emitter->setSpeed(100);
+//    _emitter->setSpeedVar(0);
+//    _emitter->setEmissionRate(10000);
+
+
 
     return true;
 }
@@ -101,7 +119,11 @@ bool GameSceneTouchLayer::onContactBegin(PhysicsContact& contact){
     // 如果是闪电
     if( other_node->getTag() == LIGHTNING_A_TAG){
         if( bird_node->getTag() == BIRD_A_TAG){
-            CCLOG("get power");
+            auto action = Sequence::create(ScaleTo::create(0.2f, 0, 1, 1), CallFuncN::create(CC_CALLBACK_1(GameSceneTouchLayer::garbageCollection, this)), NULL);
+            other_node->runAction(action);
+
+            addBatteryPower(BIRD_A_TAG);
+            
         }
         else{
             CCLOG("dead");
@@ -109,7 +131,11 @@ bool GameSceneTouchLayer::onContactBegin(PhysicsContact& contact){
     }
     else if( other_node->getTag() == LIGHTNING_B_TAG){
         if( bird_node->getTag() == BIRD_B_TAG){
-            CCLOG("get power");
+            auto action = Sequence::create(ScaleTo::create(0.2f, 0, 1, 1), CallFuncN::create(CC_CALLBACK_1(GameSceneTouchLayer::garbageCollection, this)), NULL);
+            other_node->runAction(action);
+
+            addBatteryPower(BIRD_B_TAG);
+
         }
         else{
             CCLOG("dead");
@@ -119,6 +145,26 @@ bool GameSceneTouchLayer::onContactBegin(PhysicsContact& contact){
 //    SceneManager::sharedSceneManager()->changeScene(SceneManager::en_GameoverScene);
 
     return true;
+}
+
+void GameSceneTouchLayer::addBatteryPower(int bird_tag){
+    // 创建粒子
+    ParticleSystemQuad *particle = ParticleSystemQuad::create("Particles/Phoenix.plist");
+    particle->setPosition(getChildByTag(bird_tag)->getPosition());
+    particle->setStartSize(500);
+    particle->setStartSize(10);
+    particle->setDuration(1.0f);
+    addChild(particle);
+    
+    // 创建粒子移动轨迹（飞向电池）
+    ccBezierConfig config;
+    config.endPosition = battery->getPosition();
+    config.controlPoint_1 = Vec2(0, getChildByTag(bird_tag)->getPosition().y);
+    config.controlPoint_2 = Vec2(0, Director::getInstance()->getVisibleSize().height);
+    ActionInterval* bezier = BezierTo::create(1.0f, config);
+    
+    auto particle_action = Sequence::create(bezier, DelayTime::create(2.0f),  CallFunc::create([&](){battery->nextStatus();}), NULL);
+    particle->runAction(particle_action);
 }
 
 void GameSceneTouchLayer::createBarrier(float dt)
@@ -131,9 +177,10 @@ void GameSceneTouchLayer::createBarrier(float dt)
 //        barrier_vector.pushBack(barrier);
 //        addChild(barrier, 30);
         LightningSprite *lightning = LightningSprite::create();
+        barrier_vector.pushBack(lightning);
         addChild(lightning, 30);
     }
-    else if(randomType < 50){
+    else if(randomType < 80){
         BrickSprite *barrier = BrickSprite::createWithType(3);
         barrier_vector.pushBack(barrier);
         addChild(barrier, 30);
@@ -162,6 +209,9 @@ void GameSceneTouchLayer::update(float dt)
             garbageCollection(barrier);
         }
     }
+    
+    streak_A->setPosition(getChildByTag(BIRD_A_TAG)->getPosition());
+    streak_B->setPosition(getChildByTag(BIRD_B_TAG)->getPosition());
 }
 
 
@@ -169,10 +219,12 @@ void GameSceneTouchLayer::update(float dt)
 void GameSceneTouchLayer::garbageCollection(Ref *object){
     Sprite *sprite = (Sprite*)object;
 
-    if (sprite->getTag() >= BARRIER_TAG && sprite->getTag() <= 20 )
+    if (sprite->getTag() >= BARRIER_TAG)
     {
         barrier_vector.eraseObject(sprite);
         this->removeChild(sprite,true);
+        CCLOG("clean object");
+
     }
 }
 
@@ -186,7 +238,7 @@ void GameSceneTouchLayer::onEnter(){
 
 bool GameSceneTouchLayer::onTouchBegan(Touch* touch, Event  *event)
 {
-    log("TouchTest onTouchBegan");
+    CCLOG("TouchTest onTouchBegan");
     auto location = touch->getLocation();
     Size visibleSize = Director::getInstance()->getVisibleSize();
     if (location.x <= visibleSize.width / 2){
@@ -197,14 +249,14 @@ bool GameSceneTouchLayer::onTouchBegan(Touch* touch, Event  *event)
         CCLOG("right span");
         direction = 1;
     }
-    dynamic_cast<BirdSprite*>(getChildByTag(BIRD_A_TAG))->spin(direction);
-    dynamic_cast<BirdSprite*>(getChildByTag(BIRD_B_TAG))->spin(direction);
+    bird_A->spin(direction);
+    bird_B->spin(direction);
 
     return true;
 }
 
 void GameSceneTouchLayer::onTouchEnded(cocos2d::Touch *touch, cocos2d::Event *event){
-    log("TouchTest onTouchesEnded");
-    getChildByTag(BIRD_A_TAG)->stopAllActions();
-    getChildByTag(BIRD_B_TAG)->stopAllActions();
+    CCLOG("TouchTest onTouchesEnded");
+    bird_A->stopAllActions();
+    bird_B->stopAllActions();
 }

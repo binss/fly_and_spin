@@ -11,6 +11,9 @@
 
 #include "cocos2d.h"
 #include <stdio.h>
+#include "BatterySprite.h"
+#include "BirdSprite.h"
+
 USING_NS_CC;
 
 class GameScene;
@@ -31,6 +34,15 @@ public:
     Vector<Sprite *> barrier_vector;
     int direction;
     int score;
+    void addBatteryPower(int bird_tag);
+
+    MotionStreak* streak_A;
+    MotionStreak* streak_B;
+    
+    BatterySprite *battery;
+    BirdSprite * bird_A;
+    BirdSprite * bird_B;
+
 
 //    virtual void ccTouchesMoved(CCSet *pTouches, CCEvent *pEvent);
 //    virtual void ccTouchesEnded(CCSet *pTouches, CCEvent *pEvent);

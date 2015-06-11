@@ -21,5 +21,6 @@ public:
     int direction;
     int old_direction;
     void spin(int direction);
+    void becomeSuperBird();
 };
 #endif /* defined(__fly_and_spin__BirdSprite__) */
