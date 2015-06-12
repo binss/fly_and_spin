@@ -34,7 +34,7 @@ public:
     Vector<Sprite *> barrier_vector;
     int direction;
     int score;
-    void addBatteryPower(int bird_tag);
+    void addBatteryPower(BirdSprite *bird);
 
     MotionStreak* streak_A;
     MotionStreak* streak_B;
@@ -42,8 +42,11 @@ public:
     BatterySprite *battery;
     BirdSprite * bird_A;
     BirdSprite * bird_B;
-
-
+    void birdDead(int type, BirdSprite * bird);
+    void enterSuperMode();
+    void quitSuperMode(float dt);
+    
+    int score_unit;
 //    virtual void ccTouchesMoved(CCSet *pTouches, CCEvent *pEvent);
 //    virtual void ccTouchesEnded(CCSet *pTouches, CCEvent *pEvent);
 };

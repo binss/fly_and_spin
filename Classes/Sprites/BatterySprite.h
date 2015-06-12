@@ -19,6 +19,8 @@ public:
     static BatterySprite * create();
     bool init();
     int nextStatus();
+    int getCondition();
+private:
     int condition;
 };
 

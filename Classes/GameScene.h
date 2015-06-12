@@ -17,5 +17,6 @@ public:
     
     void initLayer();
     void reset();
+    void gameOver(Ref* sender);
 };
 #endif // __GAME_SCENE_H__

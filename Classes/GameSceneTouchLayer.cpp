@@ -27,6 +27,10 @@
 #define LIGHTNING_B_TAG 21
 #define BATTERY_TAG 200
 
+#define NORMAL_SPEED -250
+#define SUPER_SPEED -1000
+
+
 bool GameSceneTouchLayer::init()
 {
     CCLOG("TouchTest call");
@@ -39,10 +43,8 @@ bool GameSceneTouchLayer::init()
     this->setTouchEnabled(true);
     this->setTouchMode(Touch::DispatchMode::ONE_BY_ONE);
     EventDispatcher* eventDispatcher = Director::getInstance()->getEventDispatcher();
-//    
-//    auto listen = EventListenerTouchAllAtOnce::create();
-//    listen->onTouchesBegan = CC_CALLBACK_2(GameSceneTouchLayer::onTouchesBegan,this);
-////    listen->onTouchesMoved = CC_CALLBACK_2(TouchTest::onTouchesMoved,this);
+//
+//    listen->onTouchesMoved = CC_CALLBACK_2(TouchTest::onTouchesMoved,this);
 //    listen->onTouchesEnded = CC_CALLBACK_2(GameSceneTouchLayer::onTouchesEnded,this);
 ////    listen->onTouchesCancelled = CC_CALLBACK_2(TouchTest::onTouchesCancelled,this);
 //    eventDispatcher->addEventListenerWithSceneGraphPriority(listen,this);
@@ -68,28 +70,16 @@ bool GameSceneTouchLayer::init()
     battery = BatterySprite::create();
     addChild(battery, 40);
     score = 0;
-
+    score_unit = 1;
     streak_A = MotionStreak::create(1.0f, 50, 100, Color3B::RED, "Particles/streak_2.png");
     streak_B = MotionStreak::create(1.0f, 50, 100, Color3B::BLUE, "Particles/streak_2.png");
 
     addChild(streak_A);
     addChild(streak_B);
 
-    this->schedule(schedule_selector(GameSceneTouchLayer::createBarrier),3.0f);
+    this->schedule(schedule_selector(GameSceneTouchLayer::createBarrier), 3.0f);
 
     this->scheduleUpdate();
-
-    
-//    auto _emitter = ParticleFlower::create();
-//    addChild(_emitter, 10);
-//    _emitter->setTexture(Director::getInstance()->getTextureCache()->addImage("Particles/stars.png"));
-//    _emitter->setLifeVar(0);
-//    _emitter->setLife(10);
-//    _emitter->setSpeed(100);
-//    _emitter->setSpeedVar(0);
-//    _emitter->setEmissionRate(10000);
-
-
 
     return true;
 }
@@ -101,7 +91,7 @@ bool GameSceneTouchLayer::onContactBegin(PhysicsContact& contact){
     auto node_A = (Sprite*)contact.getShapeA()->getBody()->getNode();
     auto node_B = (Sprite*)contact.getShapeB()->getBody()->getNode();
     
-    Sprite * bird_node;
+    BirdSprite * bird_node;
     Sprite * other_node;
     if (node_A == NULL || node_B == NULL)
     {
@@ -109,11 +99,11 @@ bool GameSceneTouchLayer::onContactBegin(PhysicsContact& contact){
     }
     // 判断鸟节点
     if (node_A->getTag() >= BIRD_A_TAG){
-        bird_node = node_A;
+        bird_node = dynamic_cast<BirdSprite*>(node_A);
         other_node = node_B;
     }
     else{
-        bird_node = node_B;
+        bird_node = dynamic_cast<BirdSprite*>(node_B);
         other_node = node_A;
     }
     // 如果是闪电
@@ -121,12 +111,11 @@ bool GameSceneTouchLayer::onContactBegin(PhysicsContact& contact){
         if( bird_node->getTag() == BIRD_A_TAG){
             auto action = Sequence::create(ScaleTo::create(0.2f, 0, 1, 1), CallFuncN::create(CC_CALLBACK_1(GameSceneTouchLayer::garbageCollection, this)), NULL);
             other_node->runAction(action);
-
-            addBatteryPower(BIRD_A_TAG);
-            
+            addBatteryPower(bird_node);
+            enterSuperMode();
         }
         else{
-            CCLOG("dead");
+            birdDead(2, bird_node);
         }
     }
     else if( other_node->getTag() == LIGHTNING_B_TAG){
@@ -134,23 +123,40 @@ bool GameSceneTouchLayer::onContactBegin(PhysicsContact& contact){
             auto action = Sequence::create(ScaleTo::create(0.2f, 0, 1, 1), CallFuncN::create(CC_CALLBACK_1(GameSceneTouchLayer::garbageCollection, this)), NULL);
             other_node->runAction(action);
 
-            addBatteryPower(BIRD_B_TAG);
-
+            addBatteryPower(bird_node);
+            enterSuperMode();
         }
         else{
-            CCLOG("dead");
+            birdDead(2, bird_node);
         }
     }
-    
-//    SceneManager::sharedSceneManager()->changeScene(SceneManager::en_GameoverScene);
 
     return true;
 }
 
-void GameSceneTouchLayer::addBatteryPower(int bird_tag){
+void GameSceneTouchLayer::birdDead(int type, BirdSprite * bird){
+    switch (type) {
+        case 1:
+            break;
+        // 触电死
+        case 2:
+            setTouchEnabled(false);
+            bird_A->stopAllActions();
+            bird_B->stopAllActions();
+
+            this->unscheduleAllCallbacks();
+            Director::getInstance()->getRunningScene()->getPhysicsWorld()->setSpeed(0);
+            bird->becomeElectricShock();
+            break;
+        default:
+            break;
+    }
+}
+
+void GameSceneTouchLayer::addBatteryPower(BirdSprite *bird){
     // 创建粒子
     ParticleSystemQuad *particle = ParticleSystemQuad::create("Particles/Phoenix.plist");
-    particle->setPosition(getChildByTag(bird_tag)->getPosition());
+    particle->setPosition(bird->getPosition());
     particle->setStartSize(500);
     particle->setStartSize(10);
     particle->setDuration(1.0f);
@@ -159,17 +165,60 @@ void GameSceneTouchLayer::addBatteryPower(int bird_tag){
     // 创建粒子移动轨迹（飞向电池）
     ccBezierConfig config;
     config.endPosition = battery->getPosition();
-    config.controlPoint_1 = Vec2(0, getChildByTag(bird_tag)->getPosition().y);
+    config.controlPoint_1 = Vec2(0, bird->getPosition().y);
     config.controlPoint_2 = Vec2(0, Director::getInstance()->getVisibleSize().height);
     ActionInterval* bezier = BezierTo::create(1.0f, config);
-    
-    auto particle_action = Sequence::create(bezier, DelayTime::create(2.0f),  CallFunc::create([&](){battery->nextStatus();}), NULL);
+    auto enterSuperMode = [&]{
+        int status = battery->nextStatus();
+        // 准备进入无敌模式
+        if(status == 3){
+            battery->runAction(RepeatForever::create(Blink::create(1.0f, 2)));
+        }
+    };
+    auto particle_action = Sequence::create(bezier, DelayTime::create(2.0f),  CallFunc::create(enterSuperMode), NULL);
     particle->runAction(particle_action);
+    
+}
+
+void GameSceneTouchLayer::enterSuperMode(){
+    setTouchEnabled(false);
+    bird_A->becomeSuperBird();
+    bird_B->becomeSuperBird();
+    LightningSprite::speed = SUPER_SPEED;
+    BrickSprite::speed = SUPER_SPEED;
+    
+    for(auto barrier : barrier_vector)
+    {
+        barrier->getPhysicsBody()->setVelocity(Vec2(0, SUPER_SPEED));
+    }
+    unscheduleAllCallbacks();
+    score_unit = 4;
+    schedule(schedule_selector(GameSceneTouchLayer::createBarrier), 0.75f);
+    scheduleUpdate();
+    scheduleOnce(schedule_selector(GameSceneTouchLayer::quitSuperMode), 10.0f);
+}
+
+
+void GameSceneTouchLayer::quitSuperMode(float dt){
+    battery->nextStatus();
+    LightningSprite::speed = NORMAL_SPEED;
+    BrickSprite::speed = NORMAL_SPEED;
+    for(auto barrier : barrier_vector)
+    {
+        barrier->getPhysicsBody()->setVelocity(Vec2(0, NORMAL_SPEED));
+    }
+    unscheduleAllCallbacks();
+    score_unit = 1;
+    schedule(schedule_selector(GameSceneTouchLayer::createBarrier), 3.0f);
+    scheduleUpdate();
+    
+    bird_A->becomeNormalBird();
+    bird_B->becomeNormalBird();
+    setTouchEnabled(true);
 }
 
 void GameSceneTouchLayer::createBarrier(float dt)
 {
-    Size visibleSize = Director::getInstance()->getVisibleSize();
     int randomType = CCRANDOM_0_1() * 100 + 1;
     if (randomType < 40)
     {
@@ -200,7 +249,7 @@ void GameSceneTouchLayer::createBarrier(float dt)
 
 void GameSceneTouchLayer::update(float dt)
 {
-    score ++;
+    score += score_unit;
     GameScene::shareGameScene()->menuLayer->setScore(score);
 
     for(auto barrier : barrier_vector)
@@ -240,6 +289,17 @@ bool GameSceneTouchLayer::onTouchBegan(Touch* touch, Event  *event)
 {
     CCLOG("TouchTest onTouchBegan");
     auto location = touch->getLocation();
+    Rect battery_rect = battery->getBoundingBox();
+    if (battery_rect.containsPoint(location))
+    {
+        if(battery->getCondition() == 3){
+            battery->stopAllActions();
+            battery->setVisible(true);
+            enterSuperMode();
+        }
+        return true;
+    }
+    
     Size visibleSize = Director::getInstance()->getVisibleSize();
     if (location.x <= visibleSize.width / 2){
         CCLOG("left span");

@@ -1,6 +1,8 @@
 #include "GameScene.h"
 #include "CircleAction.h"
 #include "GameSceneTouchLayer.h"
+#include "SceneManager.h"
+
 USING_NS_CC;
 
 //Scene* GameScene::createScene()
@@ -52,11 +54,18 @@ void GameScene::initLayer(){
     menuLayer->setContentSize(Size(visibleSize.width, visibleSize.height));
     menuLayer->setPosition(Point(0, 0));
     _sharedGameScene->addChild(menuLayer, 12);
+    NotificationCenter::getInstance()->addObserver(this, callfuncO_selector(GameScene::gameOver), "gameover", NULL);
 }
 
 void GameScene::reset(){
+    NotificationCenter::getInstance()->removeObserver(this, "gameover");
     removeAllChildrenWithCleanup(true);
     _sharedGameScene = NULL;
 }
 
+void GameScene::gameOver(Ref* sender){
+    UserDefault::getInstance()->setIntegerForKey("current_score", gameLayer->score);
+    SceneManager::sharedSceneManager()->changeScene(SceneManager::en_GameoverScene);
 
+
+}

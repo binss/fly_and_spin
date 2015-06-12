@@ -24,6 +24,9 @@
 		34C513011B286F11007A4CF1 /* BrickSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34C512FF1B286F11007A4CF1 /* BrickSprite.cpp */; };
 		34C513041B28744E007A4CF1 /* BirdSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34C513021B28744E007A4CF1 /* BirdSprite.cpp */; };
 		34C513061B289715007A4CF1 /* battery in Resources */ = {isa = PBXBuildFile; fileRef = 34C513051B289715007A4CF1 /* battery */; };
+		34C9C5C31B2A83E700BF5749 /* bird_black_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 34C9C5C11B2A83E700BF5749 /* bird_black_2.png */; };
+		34C9C5C41B2A83E700BF5749 /* bird_black.png in Resources */ = {isa = PBXBuildFile; fileRef = 34C9C5C21B2A83E700BF5749 /* bird_black.png */; };
+		34C9C5C61B2A893B00BF5749 /* bird_black_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 34C9C5C51B2A893B00BF5749 /* bird_black_3.png */; };
 		34DDED631B2678D6005311AF /* bird_A.png in Resources */ = {isa = PBXBuildFile; fileRef = 34DDED611B2678D6005311AF /* bird_A.png */; };
 		34DDED641B2678D6005311AF /* bird_B.png in Resources */ = {isa = PBXBuildFile; fileRef = 34DDED621B2678D6005311AF /* bird_B.png */; };
 		34DDED691B2692A2005311AF /* barrier_long.png in Resources */ = {isa = PBXBuildFile; fileRef = 34DDED671B2692A2005311AF /* barrier_long.png */; };
@@ -145,6 +148,9 @@
 		34C513021B28744E007A4CF1 /* BirdSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BirdSprite.cpp; sourceTree = "<group>"; };
 		34C513031B28744E007A4CF1 /* BirdSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BirdSprite.h; sourceTree = "<group>"; };
 		34C513051B289715007A4CF1 /* battery */ = {isa = PBXFileReference; lastKnownFileType = folder; path = battery; sourceTree = "<group>"; };
+		34C9C5C11B2A83E700BF5749 /* bird_black_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bird_black_2.png; sourceTree = "<group>"; };
+		34C9C5C21B2A83E700BF5749 /* bird_black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bird_black.png; sourceTree = "<group>"; };
+		34C9C5C51B2A893B00BF5749 /* bird_black_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bird_black_3.png; sourceTree = "<group>"; };
 		34DDED611B2678D6005311AF /* bird_A.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bird_A.png; sourceTree = "<group>"; };
 		34DDED621B2678D6005311AF /* bird_B.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bird_B.png; sourceTree = "<group>"; };
 		34DDED671B2692A2005311AF /* barrier_long.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = barrier_long.png; sourceTree = "<group>"; };
@@ -353,7 +359,10 @@
 				34DDED611B2678D6005311AF /* bird_A.png */,
 				34DDED621B2678D6005311AF /* bird_B.png */,
 				34DDED671B2692A2005311AF /* barrier_long.png */,
+				34C9C5C51B2A893B00BF5749 /* bird_black_3.png */,
 				34DDED681B2692A2005311AF /* barrier_short.png */,
+				34C9C5C11B2A83E700BF5749 /* bird_black_2.png */,
+				34C9C5C21B2A83E700BF5749 /* bird_black.png */,
 			);
 			name = Resources;
 			path = ../Resources;
@@ -539,6 +548,7 @@
 				46880B8119C43A67006E1F66 /* HelloWorld.png in Resources */,
 				34DDED6A1B2692A2005311AF /* barrier_short.png in Resources */,
 				46880B7D19C43A67006E1F66 /* CloseSelected.png in Resources */,
+				34C9C5C41B2A83E700BF5749 /* bird_black.png in Resources */,
 				5087E77D17EB970100C73F5D /* Default-568h@2x.png in Resources */,
 				5087E78517EB970100C73F5D /* Icon-72.png in Resources */,
 				521A8E6519F0C34300D177D7 /* Default-736h@3x.png in Resources */,
@@ -547,6 +557,8 @@
 				50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */,
 				5087E78017EB970100C73F5D /* Icon-114.png in Resources */,
 				50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */,
+				34C9C5C61B2A893B00BF5749 /* bird_black_3.png in Resources */,
+				34C9C5C31B2A83E700BF5749 /* bird_black_2.png in Resources */,
 				50EF629617ECD46A001EB2F8 /* Icon-40.png in Resources */,
 				34DDED641B2678D6005311AF /* bird_B.png in Resources */,
 				34AF698A1B28214B006EFD4F /* lightning in Resources */,

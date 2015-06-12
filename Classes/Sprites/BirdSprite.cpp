@@ -57,7 +57,35 @@ bool BirdSprite::initWithType(int type){
 
 
 void BirdSprite::becomeSuperBird(){
-    
+    this->stopAllActions();
+    this->getPhysicsBody()->setCategoryBitmask(0);
+    this->getPhysicsBody()->setContactTestBitmask(0);
+    this->spin(1);
+}
+
+void BirdSprite::becomeNormalBird(){
+    this->stopAllActions();
+    auto setBitmask = [&](){
+        CCLOG("normalnormalnormalnormalnormalnormalnormalnormalnormalnormalnormalnormalnormalnormalnormalnormalnormal");
+        this->setVisible(true);
+        this->getPhysicsBody()->setCategoryBitmask(0xff);
+        this->getPhysicsBody()->setContactTestBitmask(0xff);
+    };
+    auto action = Sequence::create(Blink::create(2.0f, 4), DelayTime::create(0.5f), CallFunc::create(setBitmask), NULL);
+    this->runAction(action);
+}
+
+void BirdSprite::becomeElectricShock(){
+    auto animation = Animation::create();
+    animation->addSpriteFrameWithFile("bird_black.png");
+    animation->addSpriteFrameWithFile("bird_black_2.png");
+    animation->setDelayPerUnit(0.2f / 4.0f);
+    animation->setRestoreOriginalFrame(true);
+    auto shock_action = Animate::create(animation);
+    auto go_down_action = Spawn::create(RotateTo::create(0.3, 180), MoveTo::create(1.0f, Vec2(this->getPosition().x, 0)), NULL);
+    auto action = Sequence::create(Repeat::create(shock_action, 5), CallFunc::create([&](){this->setTexture("bird_black_3.png");}), go_down_action, CallFunc::create([&](){ NotificationCenter::getInstance()->postNotification("gameover");}), NULL);
+    this->runAction(action);
+
 }
 
 void BirdSprite::spin(int direction){

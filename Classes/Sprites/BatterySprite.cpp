@@ -37,5 +37,10 @@ int BatterySprite::nextStatus(){
     char path[50];
     sprintf(path,"battery/battery_%d.png", condition);
     this->setTexture(path);
+    
+    return condition;
+}
+
+int BatterySprite::getCondition(){
     return condition;
 }

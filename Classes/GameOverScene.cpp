@@ -28,6 +28,15 @@ bool GameOverScene::init()
         label->setPosition(Vec2(origin.x + visibleSize.width/2, origin.y + visibleSize.height - label->getContentSize().height));
         
         this->addChild(label, 1);
+        
+        char score[50];
+        sprintf(score, "You Height: \n%d", UserDefault::getInstance()->getIntegerForKey("current_score"));
+        auto score_label = Label::createWithTTF(score, "fonts/wawa.ttf", 80);
+
+        score_label->setPosition(Vec2(origin.x + visibleSize.width/2, origin.y + visibleSize.height / 2 - label->getContentSize().height));
+        
+        this->addChild(score_label, 1);
+        
         MenuItemFont::setFontSize(50);
         MenuItemFont::setFontName("fonts/Marker Felt.ttf");
 
@@ -35,9 +44,9 @@ bool GameOverScene::init()
         auto backItem = MenuItemFont::create("Menu", CC_CALLBACK_1(GameOverScene::backMenuCallback, this));
 
         replayItem->setPosition(Vec2(origin.x + visibleSize.width / 2,
-                                    origin.y + + visibleSize.height / 2 - replayItem->getContentSize().height/2));
+                                    origin.y + + visibleSize.height / 2 - replayItem->getContentSize().height/2 - 200) );
         backItem->setPosition(Vec2(origin.x + visibleSize.width / 2,
-                                     origin.y + + visibleSize.height / 2 - replayItem->getContentSize().height/2 - 100));
+                                     origin.y + + visibleSize.height / 2 - replayItem->getContentSize().height/2 - 300));
         
         // create menu, it's an autorelease object
         auto menu = Menu::create(replayItem, backItem, NULL);

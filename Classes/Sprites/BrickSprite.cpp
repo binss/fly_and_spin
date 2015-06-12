@@ -8,6 +8,8 @@
 
 #include "BrickSprite.h"
 
+int BrickSprite::speed = -250;
+
 BrickSprite * BrickSprite::createWithType(int type){
     
     BrickSprite *sprite = new BrickSprite();
@@ -75,7 +77,7 @@ bool BrickSprite::initWithType(int type){
     body->setCategoryBitmask(0xff);
     body->setCollisionBitmask(0);
     body->setContactTestBitmask(0xff);
-    body->setVelocity(Vec2(0, -250));
+    body->setVelocity(Vec2(0, speed));
     this->setPhysicsBody(body);
     if(type == 2){
         this->runAction(CCRepeatForever::create(RotateBy::create(1.0, 180)));
