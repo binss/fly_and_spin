@@ -19,8 +19,7 @@ bool GameMenuLayer::init()
     
     scoreLabel = Label::createWithTTF("0", "fonts/wawa.ttf", 40);
     scoreLabel->setPosition(Vec2(origin.x + visibleSize.width/2, origin.y + visibleSize.height - scoreLabel->getContentSize().height));
-//    scoreLabel->setString("000000000");
-    scoreLabel->setString("0000");
+    scoreLabel->setString("0");
     this->addChild(scoreLabel, 1);
 
     return true;

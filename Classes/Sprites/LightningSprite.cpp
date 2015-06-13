@@ -11,7 +11,7 @@
 
 #include "LightningSprite.h"
 
-int LightningSprite::speed = -250;
+//int LightningSprite::speed = -250;
 
 LightningSprite * LightningSprite::create(){
     LightningSprite *sprite = new LightningSprite();
@@ -56,11 +56,11 @@ bool LightningSprite::init(){
     this->setTag(tag);
 
     auto body = PhysicsBody::createBox(this->getContentSize());
-    body->setDynamic(true);
+    body->setDynamic(false);
     body->setCategoryBitmask(0xff);
     body->setCollisionBitmask(0);
     body->setContactTestBitmask(0xff);
-    body->setVelocity(Vec2(0, speed));
+//    body->setVelocity(Vec2(0, speed));
     this->setPhysicsBody(body);
     return true;
 }

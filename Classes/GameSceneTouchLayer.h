@@ -24,7 +24,6 @@ public:
 //    Layer *create();
     CREATE_FUNC(GameSceneTouchLayer);
     virtual bool init();
-    virtual void onEnter();
     bool onTouchBegan(cocos2d::Touch *touch, cocos2d::Event* event);
     void onTouchEnded(cocos2d::Touch* touch, cocos2d::Event* event);
     void createBarrier(float dt);
@@ -47,6 +46,10 @@ public:
     void quitSuperMode(float dt);
     
     int score_unit;
+    int barrier_speed;
+    
+    Sprite *background;
+    Sprite *background_copy;
 //    virtual void ccTouchesMoved(CCSet *pTouches, CCEvent *pEvent);
 //    virtual void ccTouchesEnded(CCSet *pTouches, CCEvent *pEvent);
 };

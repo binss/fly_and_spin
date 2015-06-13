@@ -24,5 +24,10 @@ public:
     void becomeSuperBird();
     void becomeElectricShock();
     void becomeNormalBird();
+    void becomeFlying();
+
+    void blink(float dt);
+    int blink_times;
+
 };
 #endif /* defined(__fly_and_spin__BirdSprite__) */

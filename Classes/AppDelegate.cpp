@@ -34,9 +34,11 @@ bool AppDelegate::applicationDidFinishLaunching() {
     auto director = Director::getInstance();
     auto glview = director->getOpenGLView();
     if(!glview) {
-        glview = GLViewImpl::create("My Game");
+        glview = GLViewImpl::createWithRect("Fly & Spin", Rect(0, 0, 375, 667));
+        //    glView->setViewName("ParkourSample");
         director->setOpenGLView(glview);
     }
+    glview->setDesignResolutionSize(750, 1334, ResolutionPolicy::FIXED_HEIGHT);
 
     // turn on display FPS
     director->setDisplayStats(true);

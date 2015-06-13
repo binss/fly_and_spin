@@ -18,7 +18,7 @@ class BatterySprite : public Sprite{
 public:
     static BatterySprite * create();
     bool init();
-    int nextStatus();
+    int nextCondition();
     int getCondition();
 private:
     int condition;

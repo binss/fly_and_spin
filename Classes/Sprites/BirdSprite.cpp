@@ -47,10 +47,13 @@ bool BirdSprite::initWithType(int type){
     auto body = PhysicsBody::createBox(this->getContentSize() * 0.3f);
     body->setDynamic(true);
     body->setCategoryBitmask(0xff);
-    body->setCollisionBitmask(0);
+    body->setCollisionBitmask(0xff);
     body->setContactTestBitmask(0xff);
-    this->setPhysicsBody(body);
+    body->getShape(0)->setRestitution(1.0f);
+    body->getShape(0)->setDensity(1.0f);
     
+    this->setPhysicsBody(body);
+    blink_times = 0;
     old_direction = 1;
     return true;
 }
@@ -65,15 +68,18 @@ void BirdSprite::becomeSuperBird(){
 
 void BirdSprite::becomeNormalBird(){
     this->stopAllActions();
-    auto setBitmask = [&](){
-        CCLOG("normalnormalnormalnormalnormalnormalnormalnormalnormalnormalnormalnormalnormalnormalnormalnormalnormal");
-        this->setVisible(true);
-        this->getPhysicsBody()->setCategoryBitmask(0xff);
-        this->getPhysicsBody()->setContactTestBitmask(0xff);
-    };
-    auto action = Sequence::create(Blink::create(2.0f, 4), DelayTime::create(0.5f), CallFunc::create(setBitmask), NULL);
-    this->runAction(action);
+//    auto setBitmask = [&](){
+//        this->setVisible(true);
+//        this->getPhysicsBody()->setCategoryBitmask(0xff);
+//        this->getPhysicsBody()->setContactTestBitmask(0xff);
+//    };
+//    auto action = Sequence::create(Blink::create(2.0f, 4), DelayTime::create(0.5f), CallFunc::create(setBitmask), NULL);
+    this->schedule(schedule_selector(BirdSprite::blink), 0.25f);
+
+//    this->runAction(action);
 }
+
+
 
 void BirdSprite::becomeElectricShock(){
     auto animation = Animation::create();
@@ -84,8 +90,30 @@ void BirdSprite::becomeElectricShock(){
     auto shock_action = Animate::create(animation);
     auto go_down_action = Spawn::create(RotateTo::create(0.3, 180), MoveTo::create(1.0f, Vec2(this->getPosition().x, 0)), NULL);
     auto action = Sequence::create(Repeat::create(shock_action, 5), CallFunc::create([&](){this->setTexture("bird_black_3.png");}), go_down_action, CallFunc::create([&](){ NotificationCenter::getInstance()->postNotification("gameover");}), NULL);
-    this->runAction(action);
+    this->runAction(action); 
 
+}
+
+void BirdSprite::becomeFlying(){
+    Vect force=Vect(0, -5000000.0f);
+    getPhysicsBody()->setAngularVelocity(200);
+    auto action = Sequence::create(DelayTime::create(1.0f), CallFunc::create([&](){ NotificationCenter::getInstance()->postNotification("gameover");}), NULL);
+    this->runAction(action);
+}
+
+
+// 取代Action的Blink，Blink过程中小鸟会因玩家单击产生spin动作，由于两者的异步性，无法通过spwan组合起来，故重新以非Action的方式实现blink
+void BirdSprite::blink(float dt){
+    this->setVisible(blink_times % 2);
+    blink_times++;
+    if(blink_times == 8){
+        this->setVisible(true);
+        this->unscheduleAllCallbacks();
+        blink_times = 0;
+        this->getPhysicsBody()->setCategoryBitmask(0xff);
+        this->getPhysicsBody()->setContactTestBitmask(0xff);
+    }
+    
 }
 
 void BirdSprite::spin(int direction){

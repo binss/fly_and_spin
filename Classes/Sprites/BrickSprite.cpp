@@ -8,7 +8,7 @@
 
 #include "BrickSprite.h"
 
-int BrickSprite::speed = -250;
+//int BrickSprite::speed = -250;
 
 BrickSprite * BrickSprite::createWithType(int type){
     
@@ -43,7 +43,7 @@ bool BrickSprite::initWithType(int type){
             break;
         case 4:
             path = "barrier_long.png";
-            tag = 12;
+            tag = 13;
             break;
         default:
             break;
@@ -73,11 +73,14 @@ bool BrickSprite::initWithType(int type){
     this->setPosition(Vec2(x, visibleSize.height));
     
     auto body = PhysicsBody::createBox(this->getContentSize() * 0.8f);
-    body->setDynamic(true);
+    body->setDynamic(false);
     body->setCategoryBitmask(0xff);
-    body->setCollisionBitmask(0);
+    body->setCollisionBitmask(0xff);
     body->setContactTestBitmask(0xff);
-    body->setVelocity(Vec2(0, speed));
+    body->getShape(0)->setRestitution(1.0f);
+    body->getShape(0)->setDensity(1.0f);
+//    body->setVelocity(Vec2(0, speed));
+    
     this->setPhysicsBody(body);
     if(type == 2){
         this->runAction(CCRepeatForever::create(RotateBy::create(1.0, 180)));

@@ -30,7 +30,7 @@ bool BatterySprite::init(){
     return true;
 }
 
-int BatterySprite::nextStatus(){
+int BatterySprite::nextCondition(){
     condition ++;
     if(condition > 3)
         condition = 0;
