@@ -2,7 +2,6 @@
 #include "CircleAction.h"
 #include "GameSceneTouchLayer.h"
 #include "SceneManager.h"
-
 USING_NS_CC;
 
 //Scene* GameScene::createScene()
@@ -54,6 +53,12 @@ void GameScene::initLayer(){
     menuLayer->setContentSize(Size(visibleSize.width, visibleSize.height));
     menuLayer->setPosition(Point(0, 0));
     _sharedGameScene->addChild(menuLayer, 12);
+    
+    backgroundLayer = GameBackgroundLayer::create();
+    backgroundLayer->setContentSize(Size(visibleSize.width, visibleSize.height));
+    backgroundLayer->setPosition(Point(0, 0));
+    _sharedGameScene->addChild(backgroundLayer, 0);
+    
     NotificationCenter::getInstance()->addObserver(this, callfuncO_selector(GameScene::gameOver), "gameover", NULL);
 }
 

@@ -4,6 +4,7 @@
 #include "cocos2d.h"
 #include "GameSceneTouchLayer.h"
 #include "GameMenuLayer.h"
+#include "GameBackgroundLayer.h"
 
 USING_NS_CC;
 
@@ -14,7 +15,7 @@ public:
     static GameScene* shareGameScene();
     GameSceneTouchLayer *gameLayer;
     GameMenuLayer *menuLayer;
-    
+    GameBackgroundLayer *backgroundLayer;
     void initLayer();
     void reset();
     void gameOver(Ref* sender);

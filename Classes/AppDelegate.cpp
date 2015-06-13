@@ -35,7 +35,6 @@ bool AppDelegate::applicationDidFinishLaunching() {
     auto glview = director->getOpenGLView();
     if(!glview) {
         glview = GLViewImpl::createWithRect("Fly & Spin", Rect(0, 0, 375, 667));
-        //    glView->setViewName("ParkourSample");
         director->setOpenGLView(glview);
     }
     glview->setDesignResolutionSize(750, 1334, ResolutionPolicy::FIXED_HEIGHT);

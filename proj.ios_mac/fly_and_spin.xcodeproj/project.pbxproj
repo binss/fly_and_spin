@@ -13,6 +13,10 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		340C27A21B27D02B00B2AAA7 /* GameMenuLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 340C27A01B27D02B00B2AAA7 /* GameMenuLayer.cpp */; };
+		3430219D1B2C745500E14786 /* MainScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3430219B1B2C745400E14786 /* MainScene.cpp */; };
+		3430219E1B2C76D600E14786 /* MainScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3430219B1B2C745400E14786 /* MainScene.cpp */; };
+		343021A01B2C7F2F00E14786 /* help.png in Resources */ = {isa = PBXBuildFile; fileRef = 3430219F1B2C7F2F00E14786 /* help.png */; };
+		343021A11B2C7F9200E14786 /* help.png in Resources */ = {isa = PBXBuildFile; fileRef = 3430219F1B2C7F2F00E14786 /* help.png */; };
 		346466CD1B25C4E300E26FB9 /* bird.png in Resources */ = {isa = PBXBuildFile; fileRef = 346466CC1B25C4E300E26FB9 /* bird.png */; };
 		346466D01B25C6BE00E26FB9 /* CircleAction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 346466CE1B25C6BE00E26FB9 /* CircleAction.cpp */; };
 		346466D81B25D13D00E26FB9 /* GameSceneTouchLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 346466D61B25D13D00E26FB9 /* GameSceneTouchLayer.cpp */; };
@@ -152,6 +156,9 @@
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		340C27A01B27D02B00B2AAA7 /* GameMenuLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameMenuLayer.cpp; sourceTree = "<group>"; };
 		340C27A11B27D02B00B2AAA7 /* GameMenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameMenuLayer.h; sourceTree = "<group>"; };
+		3430219B1B2C745400E14786 /* MainScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MainScene.cpp; sourceTree = "<group>"; };
+		3430219C1B2C745500E14786 /* MainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainScene.h; sourceTree = "<group>"; };
+		3430219F1B2C7F2F00E14786 /* help.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = help.png; sourceTree = "<group>"; };
 		346466CC1B25C4E300E26FB9 /* bird.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bird.png; sourceTree = "<group>"; };
 		346466CE1B25C6BE00E26FB9 /* CircleAction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CircleAction.cpp; sourceTree = "<group>"; };
 		346466CF1B25C6BE00E26FB9 /* CircleAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleAction.h; sourceTree = "<group>"; };
@@ -385,6 +392,7 @@
 				46880B7A19C43A67006E1F66 /* HelloWorld.png */,
 				34DDED611B2678D6005311AF /* bird_A.png */,
 				34DDED621B2678D6005311AF /* bird_B.png */,
+				3430219F1B2C7F2F00E14786 /* help.png */,
 				34DDED671B2692A2005311AF /* barrier_long.png */,
 				34C9C5C51B2A893B00BF5749 /* bird_black_3.png */,
 				34DDED681B2692A2005311AF /* barrier_short.png */,
@@ -416,6 +424,8 @@
 				340C27A01B27D02B00B2AAA7 /* GameMenuLayer.cpp */,
 				34FC7BA01B2C09FA00B7AF76 /* GameBackgroundLayer.h */,
 				34FC7B9F1B2C09FA00B7AF76 /* GameBackgroundLayer.cpp */,
+				3430219C1B2C745500E14786 /* MainScene.h */,
+				3430219B1B2C745400E14786 /* MainScene.cpp */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -588,6 +598,7 @@
 				50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */,
 				34C9C5C61B2A893B00BF5749 /* bird_black_3.png in Resources */,
 				34C9C5C31B2A83E700BF5749 /* bird_black_2.png in Resources */,
+				343021A01B2C7F2F00E14786 /* help.png in Resources */,
 				50EF629617ECD46A001EB2F8 /* Icon-40.png in Resources */,
 				34DDED641B2678D6005311AF /* bird_B.png in Resources */,
 				34AF698A1B28214B006EFD4F /* lightning in Resources */,
@@ -612,6 +623,7 @@
 			files = (
 				34FC7BAF1B2C11B500B7AF76 /* Particles in Resources */,
 				46880B8219C43A67006E1F66 /* HelloWorld.png in Resources */,
+				343021A11B2C7F9200E14786 /* help.png in Resources */,
 				503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */,
 				34FC7BB01B2C11B900B7AF76 /* battery in Resources */,
 				34FC7BB51B2C11CC00B7AF76 /* bird_black_3.png in Resources */,
@@ -638,6 +650,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				34FC7BA11B2C09FA00B7AF76 /* GameBackgroundLayer.cpp in Sources */,
+				3430219D1B2C745500E14786 /* MainScene.cpp in Sources */,
 				347B8D9E1B29480D009F4B08 /* BatterySprite.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				346466D81B25D13D00E26FB9 /* GameSceneTouchLayer.cpp in Sources */,
@@ -670,6 +683,7 @@
 				34FC7BAB1B2C109A00B7AF76 /* BirdSprite.cpp in Sources */,
 				46880B8B19C43A87006E1F66 /* GameScene.cpp in Sources */,
 				34FC7BA61B2C108400B7AF76 /* GameOverScene.cpp in Sources */,
+				3430219E1B2C76D600E14786 /* MainScene.cpp in Sources */,
 				34FC7BAA1B2C109700B7AF76 /* BatterySprite.cpp in Sources */,
 				34FC7BA41B2C107600B7AF76 /* GameBackgroundLayer.cpp in Sources */,
 			);

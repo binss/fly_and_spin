@@ -19,7 +19,7 @@ public:
     CREATE_FUNC(GameMenuLayer);
     virtual bool init();
     Label *scoreLabel;
-    void setScore(int score);
+    void updateScore(int score);
 
 };
 

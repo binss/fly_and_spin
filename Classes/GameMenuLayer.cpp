@@ -25,7 +25,7 @@ bool GameMenuLayer::init()
     return true;
 }
 
-void GameMenuLayer::setScore(int score){
+void GameMenuLayer::updateScore(int score){
     char char_score[6];
     sprintf(char_score, "%d", score);
     scoreLabel->setString(char_score);

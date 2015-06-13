@@ -72,24 +72,13 @@ bool GameSceneTouchLayer::init()
     score = 0;
     score_unit = 1;
     barrier_speed = NORMAL_SPEED;
-    streak_A = MotionStreak::create(1.0f, 50, 100, Color3B::RED, "Particles/streak_2.png");
-    streak_B = MotionStreak::create(1.0f, 50, 100, Color3B::BLUE, "Particles/streak_2.png");
+    streak_A = MotionStreak::create(1.0f, 50, 50, Color3B::RED, "Particles/streak_2.png");
+    streak_B = MotionStreak::create(1.0f, 50, 50, Color3B::BLUE, "Particles/streak_2.png");
 
-    addChild(streak_A);
-    addChild(streak_B);
-
-    background = Sprite::create("building/building_A_1.png");
-    background->setAnchorPoint(Vec2(0,0));
-    background->setPosition(Vec2(0,0));
-    addChild(background, 0);
-    
-    background_copy = Sprite::create("building/building_A_1.png");
-    background_copy->setAnchorPoint(Vec2(0,0));
-    background_copy->setPosition(Vec2(0, background->getContentSize().height - 1));
-    addChild(background_copy, 0);
+    addChild(streak_A, 10);
+    addChild(streak_B, 10);
     
     this->schedule(schedule_selector(GameSceneTouchLayer::createBarrier), 3.0f);
-//    this->schedule(schedule_selector(GameSceneTouchLayer::update), 0.02f);
     this->scheduleUpdate();
 
     return true;
@@ -260,18 +249,9 @@ void GameSceneTouchLayer::update(float dt)
     Size visibleSize = Director::getInstance()->getVisibleSize();
 
     score += score_unit;
-    GameScene::shareGameScene()->menuLayer->setScore(score);
-    
-    if(background_copy ->getPosition().y >= 0)
-    {
-        background->setPositionY(background->getPosition().y  - barrier_speed);
-        background_copy->setPositionY(background_copy->getPosition().y  - barrier_speed);
-        
-    }
-    else{
-        background->setPositionY(0);
-        background_copy->setPositionY(background->getContentSize().height - 1);
-    }
+    GameScene::shareGameScene()->menuLayer->updateScore(score);
+    GameScene::shareGameScene()->backgroundLayer->updateBackground(score, barrier_speed);
+
     
     for(auto barrier : barrier_vector)
     {

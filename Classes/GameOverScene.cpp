@@ -11,50 +11,44 @@
 
 bool GameOverScene::init()
 {
-    bool bRet = true;
-    do
+    if ( !Layer::init() )
     {
-        if ( !CCLayer::init() )
-        {
-            return false;
-        }
-        Size visibleSize = Director::getInstance()->getVisibleSize();
-        Vec2 origin = Director::getInstance()->getVisibleOrigin();
+        return false;
+    }
+    Size visibleSize = Director::getInstance()->getVisibleSize();
+    Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
-//        this->setTouchEnabled(true);
-//        this->setTouchMode(Touch::DispatchMode::ONE_BY_ONE);
-        auto label = Label::createWithTTF("Game Over", "fonts/wawa.ttf", 40);
-        
-        label->setPosition(Vec2(origin.x + visibleSize.width/2, origin.y + visibleSize.height - label->getContentSize().height));
-        
-        this->addChild(label, 1);
-        
-        char score[50];
-        sprintf(score, "You Height: \n%d", UserDefault::getInstance()->getIntegerForKey("current_score"));
-        auto score_label = Label::createWithTTF(score, "fonts/wawa.ttf", 80);
-
-        score_label->setPosition(Vec2(origin.x + visibleSize.width/2, origin.y + visibleSize.height / 2 - label->getContentSize().height));
-        
-        this->addChild(score_label, 1);
-        
-        MenuItemFont::setFontSize(50);
-        MenuItemFont::setFontName("fonts/Marker Felt.ttf");
-
-        auto replayItem = MenuItemFont::create("Restart", CC_CALLBACK_1(GameOverScene::replayMenuCallback, this));
-        auto backItem = MenuItemFont::create("Menu", CC_CALLBACK_1(GameOverScene::backMenuCallback, this));
-
-        replayItem->setPosition(Vec2(origin.x + visibleSize.width / 2,
-                                    origin.y + + visibleSize.height / 2 - replayItem->getContentSize().height/2 - 200) );
-        backItem->setPosition(Vec2(origin.x + visibleSize.width / 2,
-                                     origin.y + + visibleSize.height / 2 - replayItem->getContentSize().height/2 - 300));
-        
-        // create menu, it's an autorelease object
-        auto menu = Menu::create(replayItem, backItem, NULL);
-        menu->setPosition(Vec2::ZERO);
-        this->addChild(menu, 1);
-    } while (0);
+    auto label = Label::createWithTTF("Game Over", "fonts/Marker Felt.ttf", 160);
     
-    return bRet;
+    label->setPosition(Vec2(origin.x + visibleSize.width/2, origin.y + visibleSize.height * 0.7));
+    
+    this->addChild(label, 1);
+    
+    char score[50];
+    sprintf(score, "Your Height: %d \n\n Highest: 9999", UserDefault::getInstance()->getIntegerForKey("current_score"));
+    auto score_label = Label::createWithTTF(score, "fonts/Marker Felt.ttf", 60);
+
+    score_label->setPosition(Vec2(origin.x + visibleSize.width/2, origin.y + visibleSize.height / 2 - label->getContentSize().height + 100));
+    
+    this->addChild(score_label, 1);
+    
+    MenuItemFont::setFontSize(80);
+    MenuItemFont::setFontName("fonts/Marker Felt.ttf");
+
+    auto replayItem = MenuItemFont::create("Restart", CC_CALLBACK_1(GameOverScene::replayMenuCallback, this));
+    auto backItem = MenuItemFont::create("Menu", CC_CALLBACK_1(GameOverScene::backMenuCallback, this));
+
+    replayItem->setPosition(Vec2(origin.x + visibleSize.width / 2,
+                                origin.y + + visibleSize.height / 2 - replayItem->getContentSize().height/2 - 300) );
+    backItem->setPosition(Vec2(origin.x + visibleSize.width / 2,
+                                 origin.y + + visibleSize.height / 2 - replayItem->getContentSize().height/2 - 400));
+    
+    // create menu, it's an autorelease object
+    auto menu = Menu::create(replayItem, backItem, NULL);
+    menu->setPosition(Vec2::ZERO);
+    this->addChild(menu, 1);
+    
+    return true;
 }
 
 Scene* GameOverScene::shareGameOverScene()
@@ -75,11 +69,11 @@ Scene* GameOverScene::shareGameOverScene()
 
 void GameOverScene::backMenuCallback(Ref* pSender)
 {
-    Director::getInstance()->end();
+    SceneManager::sharedSceneManager()->changeScene(SceneManager::en_MainScene);
 }
 
 void GameOverScene::replayMenuCallback(Ref* pSender)
 {
-    SceneManager::sharedSceneManager()->changeScene(SceneManager::en_MainScene);
+    SceneManager::sharedSceneManager()->changeScene(SceneManager::en_GameScene);
 
 }
