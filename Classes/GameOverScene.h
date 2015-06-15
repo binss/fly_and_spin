@@ -20,11 +20,9 @@ public:
     virtual bool init();
     CREATE_FUNC(GameOverScene);
     static Scene* shareGameOverScene();
+    
     void replayMenuCallback(Ref* pSender);
     void backMenuCallback(Ref* pSender);
-
-//    void restartGame(CCObject *pSender, TouchEventType type);
-//    void quitGame(CCObject *pSender, TouchEventType type);
 };
 
 #endif /* defined(__fly_and_spin__GameOverScene__) */

@@ -23,12 +23,7 @@ bool CircleAction::init(float t, Point center, float radius, float angle, int di
         m_unit = Director::getInstance()->getAnimationInterval() * m_radian / t;
         m_time = 1;
         m_dirction = dirction;
-//        m_beginRadian = M_PI + atan2f(m_center.y,m_center.x);
 
-//        m_unit = 2.0 * M_PI / (t/Director::getInstance()->getAnimationInterval());
-//        CCLOG("%f", m_unit);
-//        m_time = 1;
-//        m_radian = 2.0 * M_PI * init_angle / 360;
         m_unit_angle = 360 / (t/Director::getInstance()->getAnimationInterval());
         return true;
     }

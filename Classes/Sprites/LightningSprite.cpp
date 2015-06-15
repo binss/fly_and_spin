@@ -11,7 +11,6 @@
 
 #include "LightningSprite.h"
 
-//int LightningSprite::speed = -250;
 
 LightningSprite * LightningSprite::create(){
     LightningSprite *sprite = new LightningSprite();

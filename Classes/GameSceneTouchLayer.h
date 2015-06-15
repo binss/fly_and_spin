@@ -21,36 +21,37 @@ class GameScene;
 
 class GameSceneTouchLayer : public Layer{
 public:
-//    Layer *create();
-    CREATE_FUNC(GameSceneTouchLayer);
     virtual bool init();
+    CREATE_FUNC(GameSceneTouchLayer);
     bool onTouchBegan(cocos2d::Touch *touch, cocos2d::Event* event);
     void onTouchEnded(cocos2d::Touch* touch, cocos2d::Event* event);
-    void createBarrier(float dt);
-    void update(float dt);
-    void garbageCollection(Ref *object);
     bool onContactBegin(PhysicsContact& contact);
-    Vector<Sprite *> barrier_vector;
-    int direction;
-    int score;
-    void addBatteryPower(BirdSprite *bird);
 
-    MotionStreak* streak_A;
-    MotionStreak* streak_B;
+    void update(float dt);
+    void createBarrier(float dt);
     
-    BatterySprite *battery;
-    BirdSprite * bird_A;
-    BirdSprite * bird_B;
+    void garbageCollection(Ref *object);
+    void addBatteryPower(BirdSprite *bird);
     void birdDead(int type, BirdSprite * bird);
     void enterSuperMode();
     void quitSuperMode(float dt);
-    
+    int score;
+
+private:
+    Vector<Sprite *> barrier_vector;
+
     int score_unit;
-    int barrier_speed;
+    int speed;
+    int direction;
+    Vec2 spin_center;
     
-    Sprite *background;
-    Sprite *background_copy;
-//    virtual void ccTouchesMoved(CCSet *pTouches, CCEvent *pEvent);
-//    virtual void ccTouchesEnded(CCSet *pTouches, CCEvent *pEvent);
+    BatterySprite *battery;
+    MotionStreak* streak_A;
+    MotionStreak* streak_B;
+    
+    BirdSprite * bird_A;
+    BirdSprite * bird_B;
+
+
 };
 #endif /* defined(__fly_and_spin__GameSceneTouchLayer__) */

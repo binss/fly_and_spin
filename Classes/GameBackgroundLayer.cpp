@@ -18,7 +18,7 @@ bool GameBackgroundLayer::init()
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
     
     background = Sprite::create("building/building_A_1.png");
-    background->setTag(700);
+//    background->setTag(700);
     background->setScaleX(visibleSize.width / background->getContentSize().width);
     background->setAnchorPoint(Vec2(0,1));
     background->setPosition(Vec2(0,background->getContentSize().height));
@@ -30,6 +30,7 @@ bool GameBackgroundLayer::init()
     background_copy->setPosition(Vec2(0, 2*background->getContentSize().height));
     addChild(background_copy, 0);
     
+    stage = 0;
     
     return true;
 }
@@ -40,27 +41,37 @@ void GameBackgroundLayer::updateBackground(int score, int speed){
     background_copy->setPositionY(background_copy->getPosition().y  - speed);
     
     if(background ->getPosition().y < 0){
-        if(background->getTag() == 700){
-            background->setTag(701);
+        if(stage == 0){
             background->setTexture("building/building_A_2.png");
+            stage = 1;
         }
         if(score >= 1000){
-            if(background->getTag() == 701){
+            if(stage == 1){
                 background->setTexture("building/building_A_3.png");
-                background->setTag(702);
+                stage = 2;
             }
-            if(background->getTag() == 703){
+            if(stage == 3){
                 background->setTexture("building/building_A_4.png");
-                background->setTag(704);
+                stage = 4;
+            }
+        }
+        if(score >= 5000){
+            if(stage == 4){
+                background->setTexture("building/building_A_5.png");
+                stage = 5;
             }
         }
         background->setPositionY(background_copy ->getPosition().y + background->getContentSize().height - speed);
         
     }
     if(background_copy ->getPosition().y < 0){
-        if(background->getTag() == 702){
+        if(stage == 2){
             background_copy->setTexture("building/building_A_4.png");
-            background->setTag(703);
+            stage = 3;
+        }
+        if(stage == 5){
+            background_copy->setTexture("building/building_A_5.png");
+            stage = 6;
         }
         background_copy->setPositionY(background ->getPosition().y + background->getContentSize().height - speed);
         

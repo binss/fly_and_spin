@@ -10,25 +10,25 @@
 #include "GameOverScene.h"
 #include "GameScene.h"
 #include "MainScene.h"
-SceneManager* SceneManager::mSceneManager = NULL;
+SceneManager* SceneManager::_SceneManager = NULL;
 
 SceneManager* SceneManager::sharedSceneManager()
 {
-    if(mSceneManager == NULL)
+    if(_SceneManager == NULL)
     {
-        mSceneManager = new SceneManager();
-        if(mSceneManager && mSceneManager->init())
+        _SceneManager = new SceneManager();
+        if(_SceneManager && _SceneManager->init())
         {
-            mSceneManager->autorelease();
+            _SceneManager->autorelease();
         }
         else
         {
-            CC_SAFE_DELETE(mSceneManager);
-            mSceneManager = NULL;
+            CC_SAFE_DELETE(_SceneManager);
+            _SceneManager = NULL;
         }
     }
     
-    return mSceneManager;
+    return _SceneManager;
 }
 
 bool SceneManager::init()
@@ -38,9 +38,6 @@ bool SceneManager::init()
 
 void SceneManager::changeScene(EnumSceneType scene)
 {
-//    Director::getInstance()->runWithScene(GameOverScene::shareGameOverScene());
-//    return;
-
     switch (scene)
     {
         case en_MainScene:          //游戏主画面
@@ -52,20 +49,19 @@ void SceneManager::changeScene(EnumSceneType scene)
                 Director::getInstance()->runWithScene(MainScene::shareMainScene());
             }
             else{
-                GameScene::shareGameScene()->reset();
-                Director::getInstance()->replaceScene(CCTransitionProgressHorizontal::create(1.0f, MainScene::shareMainScene()));
+                Director::getInstance()->replaceScene(TransitionProgressHorizontal::create(1.0f, MainScene::shareMainScene()));
             }
             break;
         }
         case en_GameScene:
         {
             GameScene::shareGameScene()->reset();
-            Director::getInstance()->replaceScene(CCTransitionProgressHorizontal::create(1.0f, GameScene::shareGameScene()));
+            Director::getInstance()->replaceScene(TransitionProgressHorizontal::create(1.0f, GameScene::shareGameScene()));
             break;
         }
         case en_GameoverScene:          //游戏界面
         {
-            Director::getInstance()->replaceScene(CCTransitionCrossFade::create(1.0f, GameOverScene::shareGameOverScene()));
+            Director::getInstance()->replaceScene(TransitionCrossFade::create(1.0f, GameOverScene::shareGameOverScene()));
             CCLOG("gameover");
             break;
         }

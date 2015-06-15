@@ -16,11 +16,10 @@ USING_NS_CC;
 class GameMenuLayer : public Layer
 {
 public:
-    CREATE_FUNC(GameMenuLayer);
     virtual bool init();
+    CREATE_FUNC(GameMenuLayer);
     Label *scoreLabel;
     void updateScore(int score);
-
 };
 
 #endif /* defined(__fly_and_spin__GameMenuLayer__) */

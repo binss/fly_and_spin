@@ -8,7 +8,6 @@
 
 #include "BrickSprite.h"
 
-//int BrickSprite::speed = -250;
 
 BrickSprite * BrickSprite::createWithType(int type){
     
@@ -30,20 +29,24 @@ bool BrickSprite::initWithType(int type){
     int tag;
     switch (type) {
         case 1:
-            path = "barrier_short.png";
+            path = "brick/brick_short.png";
             tag = 10;
             break;
         case 2:
-            path = "barrier_short.png";
+            path = "brick/brick_short.png";
             tag = 11;
             break;
         case 3:
-            path = "barrier_long.png";
+            path = "brick/brick_long.png";
             tag = 12;
             break;
         case 4:
-            path = "barrier_long.png";
+            path = "brick/brick_long.png";
             tag = 13;
+            break;
+        case 5:
+            path = "brick/brick_square.png";
+            tag = 14;
             break;
         default:
             break;
@@ -53,7 +56,7 @@ bool BrickSprite::initWithType(int type){
     this->setTag(tag);
     
     int x;
-    int width = this->getContentSize().width * 0.8f;
+    int width = getContentSize().width * 0.8f;
     switch (type) {
         case 1:
             x = CCRANDOM_0_1() * (visibleSize.width -  width) + width / 2;
@@ -67,6 +70,8 @@ bool BrickSprite::initWithType(int type){
         case 4:
             x = visibleSize.width - width / 2;
             break;
+        case 5:
+            x = CCRANDOM_0_1() * (visibleSize.width -  width) + width / 2;
         default:
             break;
     }

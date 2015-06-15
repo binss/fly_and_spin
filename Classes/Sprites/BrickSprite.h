@@ -18,7 +18,6 @@ class BrickSprite : public Sprite{
 public:
     static BrickSprite * createWithType(int type);
     bool initWithType(int type);
-//    static int speed;
 
 };
 #endif /* defined(__fly_and_spin__BrickSprite__) */

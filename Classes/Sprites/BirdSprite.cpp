@@ -5,8 +5,7 @@
 //  Created by bin on 15/6/10.
 //
 //
-#define BIRD_A_TAG 100
-#define BIRD_B_TAG 101
+
 #define RADIUS 250
 
 #include "BirdSprite.h"
@@ -30,11 +29,11 @@ bool BirdSprite::initWithType(int type){
     int tag;
     switch (type) {
         case 1:
-            path = "bird_A.png";
+            path = "bird/bird_A.png";
             tag = 100;
             break;
         case 2:
-            path = "bird_B.png";
+            path = "bird/bird_B.png";
             tag = 101;
             break;
         default:
@@ -63,28 +62,20 @@ void BirdSprite::becomeSuperBird(){
     this->stopAllActions();
     this->getPhysicsBody()->setCategoryBitmask(0);
     this->getPhysicsBody()->setContactTestBitmask(0);
-    this->spin(1);
+    this->spin(1, spin_center);
 }
 
 void BirdSprite::becomeNormalBird(){
     this->stopAllActions();
-//    auto setBitmask = [&](){
-//        this->setVisible(true);
-//        this->getPhysicsBody()->setCategoryBitmask(0xff);
-//        this->getPhysicsBody()->setContactTestBitmask(0xff);
-//    };
-//    auto action = Sequence::create(Blink::create(2.0f, 4), DelayTime::create(0.5f), CallFunc::create(setBitmask), NULL);
     this->schedule(schedule_selector(BirdSprite::blink), 0.25f);
-
-//    this->runAction(action);
 }
 
 
 
 void BirdSprite::becomeElectricShock(){
     auto animation = Animation::create();
-    animation->addSpriteFrameWithFile("bird_black.png");
-    animation->addSpriteFrameWithFile("bird_black_2.png");
+    animation->addSpriteFrameWithFile("bird/bird_black.png");
+    animation->addSpriteFrameWithFile("bird/bird_black_2.png");
     animation->setDelayPerUnit(0.2f / 4.0f);
     animation->setRestoreOriginalFrame(true);
     auto shock_action = Animate::create(animation);
@@ -113,15 +104,15 @@ void BirdSprite::blink(float dt){
         this->getPhysicsBody()->setCategoryBitmask(0xff);
         this->getPhysicsBody()->setContactTestBitmask(0xff);
     }
-    
 }
 
-void BirdSprite::spin(int direction){
-    Size visibleSize = Director::getInstance()->getVisibleSize();
+
+void BirdSprite::spin(int direction, Vec2 center){
+    spin_center = center;
     if(direction != old_direction){
         this->runAction(RotateBy::create(0.1, 180));
         this->runAction(RotateBy::create(0.1, 180));
         old_direction = direction;
     }
-    this->runAction(CCRepeatForever::create(CircleAction::create(2, Point(visibleSize.width/2 , visibleSize.height/2 - RADIUS), RADIUS, 360, direction)));
+    this->runAction(CCRepeatForever::create(CircleAction::create(2, center, RADIUS, 360, direction)));
 }

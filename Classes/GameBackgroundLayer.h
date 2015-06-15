@@ -18,10 +18,12 @@ class GameBackgroundLayer : public Layer
 public:
     CREATE_FUNC(GameBackgroundLayer);
     virtual bool init();
+    void updateBackground(int score, int speed);
+    int stage;
+    
+private:
     Sprite *background;
     Sprite *background_copy;
-    void updateBackground(int score, int speed);
-    int speed;
 };
 
 #endif /* defined(__fly_and_spin__GameBackgroundLayer__) */

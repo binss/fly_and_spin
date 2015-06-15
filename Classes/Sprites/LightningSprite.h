@@ -18,7 +18,6 @@ class LightningSprite : public Sprite{
 public:
     static LightningSprite * create();
     bool init();
-//    static int speed;
 };
 
 #endif /* defined(__fly_and_spin__LightningSprite__) */

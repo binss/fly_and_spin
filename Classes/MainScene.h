@@ -11,6 +11,8 @@
 
 #include <stdio.h>
 #include "cocos2d.h"
+#include "BirdSprite.h"
+
 USING_NS_CC;
 
 
@@ -23,8 +25,17 @@ public:
     void startMenuCallback(Ref* pSender);
     void helpMenuCallback(Ref* pSender);
     void backMenuCallback(Ref* pSender);
+    void changeDirection(float dt);
+    
+private:
     Sprite *help_sprite;
     Menu *menu;
+    
+    BirdSprite * bird_A;
+    BirdSprite * bird_B;
+    Vec2 spin_center;
+
+    int direction;
 };
 
 #endif /* defined(__fly_and_spin__MainScene__) */
