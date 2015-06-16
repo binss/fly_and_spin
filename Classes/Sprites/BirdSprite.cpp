@@ -7,6 +7,8 @@
 //
 
 #define RADIUS 250
+#define BIRD_A_TAG 100
+#define BIRD_B_TAG 101
 
 #include "BirdSprite.h"
 #include "CircleAction.h"
@@ -30,11 +32,11 @@ bool BirdSprite::initWithType(int type){
     switch (type) {
         case 1:
             path = "bird/bird_A.png";
-            tag = 100;
+            tag = BIRD_A_TAG;
             break;
         case 2:
             path = "bird/bird_B.png";
-            tag = 101;
+            tag = BIRD_B_TAG;
             break;
         default:
             break;
@@ -60,6 +62,11 @@ bool BirdSprite::initWithType(int type){
 
 void BirdSprite::becomeSuperBird(){
     this->stopAllActions();
+    if(this->getTag() == BIRD_A_TAG)
+        this->setTexture("bird/bird_A_super.png");
+    else
+        this->setTexture("bird/bird_B_super.png");
+
     this->getPhysicsBody()->setCategoryBitmask(0);
     this->getPhysicsBody()->setContactTestBitmask(0);
     this->spin(1, spin_center);
@@ -67,6 +74,7 @@ void BirdSprite::becomeSuperBird(){
 
 void BirdSprite::becomeNormalBird(){
     this->stopAllActions();
+
     this->schedule(schedule_selector(BirdSprite::blink), 0.25f);
 }
 
@@ -98,8 +106,12 @@ void BirdSprite::blink(float dt){
     this->setVisible(blink_times % 2);
     blink_times++;
     if(blink_times == 8){
-        this->setVisible(true);
         this->unscheduleAllCallbacks();
+        this->setVisible(true);
+        if(this->getTag() == BIRD_A_TAG)
+            this->setTexture("bird/bird_A.png");
+        else
+            this->setTexture("bird/bird_B.png");
         blink_times = 0;
         this->getPhysicsBody()->setCategoryBitmask(0xff);
         this->getPhysicsBody()->setContactTestBitmask(0xff);

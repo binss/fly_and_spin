@@ -29,7 +29,8 @@ public:
 
     void update(float dt);
     void createBarrier(float dt);
-    
+    void speedUp(float dt);
+
     void garbageCollection(Ref *object);
     void addBatteryPower(BirdSprite *bird);
     void birdDead(int type, BirdSprite * bird);
@@ -42,6 +43,7 @@ private:
 
     int score_unit;
     int speed;
+    float create_barrier_interval;
     int direction;
     Vec2 spin_center;
     

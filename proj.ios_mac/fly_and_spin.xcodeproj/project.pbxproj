@@ -32,6 +32,10 @@
 		347B8D9E1B29480D009F4B08 /* BatterySprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 347B8D9C1B29480D009F4B08 /* BatterySprite.cpp */; };
 		34AF698A1B28214B006EFD4F /* lightning in Resources */ = {isa = PBXBuildFile; fileRef = 34AF69891B28214B006EFD4F /* lightning */; };
 		34AF69911B28244E006EFD4F /* LightningSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34AF698F1B28244E006EFD4F /* LightningSprite.cpp */; };
+		34C3D1821B2F3D1500B0A1E8 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 34C3D1811B2F3D1500B0A1E8 /* pause.png */; };
+		34C3D1831B2F3D1500B0A1E8 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 34C3D1811B2F3D1500B0A1E8 /* pause.png */; };
+		34C3D1871B2F422200B0A1E8 /* GamePauseLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34C3D1851B2F422200B0A1E8 /* GamePauseLayer.cpp */; };
+		34C3D1881B2F422200B0A1E8 /* GamePauseLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34C3D1851B2F422200B0A1E8 /* GamePauseLayer.cpp */; };
 		34C513041B28744E007A4CF1 /* BirdSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34C513021B28744E007A4CF1 /* BirdSprite.cpp */; };
 		34C513061B289715007A4CF1 /* battery in Resources */ = {isa = PBXBuildFile; fileRef = 34C513051B289715007A4CF1 /* battery */; };
 		34F320F51B2998710071C43F /* Particles in Resources */ = {isa = PBXBuildFile; fileRef = 34F320F41B2998710071C43F /* Particles */; };
@@ -167,6 +171,9 @@
 		34AF69891B28214B006EFD4F /* lightning */ = {isa = PBXFileReference; lastKnownFileType = folder; path = lightning; sourceTree = "<group>"; };
 		34AF698F1B28244E006EFD4F /* LightningSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LightningSprite.cpp; sourceTree = "<group>"; };
 		34AF69901B28244E006EFD4F /* LightningSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LightningSprite.h; sourceTree = "<group>"; };
+		34C3D1811B2F3D1500B0A1E8 /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
+		34C3D1851B2F422200B0A1E8 /* GamePauseLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GamePauseLayer.cpp; sourceTree = "<group>"; };
+		34C3D1861B2F422200B0A1E8 /* GamePauseLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GamePauseLayer.h; sourceTree = "<group>"; };
 		34C513001B286F11007A4CF1 /* BrickSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrickSprite.h; sourceTree = "<group>"; };
 		34C513021B28744E007A4CF1 /* BirdSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BirdSprite.cpp; sourceTree = "<group>"; };
 		34C513031B28744E007A4CF1 /* BirdSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BirdSprite.h; sourceTree = "<group>"; };
@@ -370,6 +377,7 @@
 				3EACC98E19EE6D4300EB3C5E /* res */,
 				46880B7619C43A67006E1F66 /* CloseNormal.png */,
 				46880B7719C43A67006E1F66 /* CloseSelected.png */,
+				34C3D1811B2F3D1500B0A1E8 /* pause.png */,
 				46880B7A19C43A67006E1F66 /* HelloWorld.png */,
 				3430219F1B2C7F2F00E14786 /* help.png */,
 			);
@@ -383,20 +391,22 @@
 				34AF698E1B28244E006EFD4F /* sprites */,
 				46880B8519C43A87006E1F66 /* AppDelegate.h */,
 				46880B8419C43A87006E1F66 /* AppDelegate.cpp */,
-				34769D5E1B2739900072AD18 /* SceneManager.h */,
-				34769D5D1B2739900072AD18 /* SceneManager.cpp */,
-				46880B8719C43A87006E1F66 /* GameScene.h */,
-				46880B8619C43A87006E1F66 /* GameScene.cpp */,
 				346466CF1B25C6BE00E26FB9 /* CircleAction.h */,
 				346466CE1B25C6BE00E26FB9 /* CircleAction.cpp */,
+				34769D5E1B2739900072AD18 /* SceneManager.h */,
+				34769D5D1B2739900072AD18 /* SceneManager.cpp */,
 				346466D71B25D13D00E26FB9 /* GameSceneTouchLayer.h */,
 				346466D61B25D13D00E26FB9 /* GameSceneTouchLayer.cpp */,
-				34769D581B2735CF0072AD18 /* GameOverScene.h */,
-				34769D571B2735CF0072AD18 /* GameOverScene.cpp */,
-				340C27A11B27D02B00B2AAA7 /* GameMenuLayer.h */,
-				340C27A01B27D02B00B2AAA7 /* GameMenuLayer.cpp */,
 				34FC7BA01B2C09FA00B7AF76 /* GameBackgroundLayer.h */,
 				34FC7B9F1B2C09FA00B7AF76 /* GameBackgroundLayer.cpp */,
+				340C27A11B27D02B00B2AAA7 /* GameMenuLayer.h */,
+				340C27A01B27D02B00B2AAA7 /* GameMenuLayer.cpp */,
+				34C3D1861B2F422200B0A1E8 /* GamePauseLayer.h */,
+				34C3D1851B2F422200B0A1E8 /* GamePauseLayer.cpp */,
+				46880B8719C43A87006E1F66 /* GameScene.h */,
+				46880B8619C43A87006E1F66 /* GameScene.cpp */,
+				34769D581B2735CF0072AD18 /* GameOverScene.h */,
+				34769D571B2735CF0072AD18 /* GameOverScene.cpp */,
 				3430219C1B2C745500E14786 /* MainScene.h */,
 				3430219B1B2C745400E14786 /* MainScene.cpp */,
 			);
@@ -577,6 +587,7 @@
 				346C46241B2E5B8E003E299B /* bird in Resources */,
 				3EACC98F19EE6D4300EB3C5E /* res in Resources */,
 				50EF629817ECD46A001EB2F8 /* Icon-80.png in Resources */,
+				34C3D1821B2F3D1500B0A1E8 /* pause.png in Resources */,
 				5087E78417EB970100C73F5D /* Icon-57.png in Resources */,
 				5087E77E17EB970100C73F5D /* Default.png in Resources */,
 				521A8E6419F0C34300D177D7 /* Default-667h@2x.png in Resources */,
@@ -591,6 +602,7 @@
 			files = (
 				34FC7BAF1B2C11B500B7AF76 /* Particles in Resources */,
 				46880B8219C43A67006E1F66 /* HelloWorld.png in Resources */,
+				34C3D1831B2F3D1500B0A1E8 /* pause.png in Resources */,
 				343021A11B2C7F9200E14786 /* help.png in Resources */,
 				34686A021B2DE5F8001B10EF /* sound in Resources */,
 				503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */,
@@ -619,6 +631,7 @@
 				347B8D9E1B29480D009F4B08 /* BatterySprite.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				346466D81B25D13D00E26FB9 /* GameSceneTouchLayer.cpp in Sources */,
+				34C3D1871B2F422200B0A1E8 /* GamePauseLayer.cpp in Sources */,
 				46880B8A19C43A87006E1F66 /* GameScene.cpp in Sources */,
 				34C513041B28744E007A4CF1 /* BirdSprite.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
@@ -647,6 +660,7 @@
 				46880B8B19C43A87006E1F66 /* GameScene.cpp in Sources */,
 				34FC7BA61B2C108400B7AF76 /* GameOverScene.cpp in Sources */,
 				346C462B1B2E5C7E003E299B /* BrickSprite.cpp in Sources */,
+				34C3D1881B2F422200B0A1E8 /* GamePauseLayer.cpp in Sources */,
 				3430219E1B2C76D600E14786 /* MainScene.cpp in Sources */,
 				34FC7BAA1B2C109700B7AF76 /* BatterySprite.cpp in Sources */,
 				34FC7BA41B2C107600B7AF76 /* GameBackgroundLayer.cpp in Sources */,

@@ -34,14 +34,14 @@ bool MainScene::init()
     auto backItem = MenuItemFont::create("Help", CC_CALLBACK_1(MainScene::helpMenuCallback, this));
     
     replayItem->setPosition(Vec2(origin.x + visibleSize.width / 2,
-                                 origin.y + + visibleSize.height / 4 - replayItem->getContentSize().height/2 ));
+                                 origin.y + visibleSize.height / 4 - replayItem->getContentSize().height/2 ));
     backItem->setPosition(Vec2(origin.x + visibleSize.width / 2,
                                origin.y + + visibleSize.height / 4 - backItem->getContentSize().height/2 - 100));
     
     menu = Menu::create(replayItem, backItem, NULL);
     menu->setPosition(Vec2::ZERO);
     addChild(menu, 1);
-
+    
     bird_A = BirdSprite::createWithType(1);
     bird_A->setPosition(Vec2(visibleSize.width/2 - RADIUS, visibleSize.height * 0.7f - RADIUS));
     addChild(bird_A, 10);

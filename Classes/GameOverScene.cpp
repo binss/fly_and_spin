@@ -43,7 +43,7 @@ bool GameOverScene::init()
     replayItem->setPosition(Vec2(origin.x + visibleSize.width / 2,
                                 origin.y + + visibleSize.height / 2 - replayItem->getContentSize().height/2 - 300) );
     backItem->setPosition(Vec2(origin.x + visibleSize.width / 2,
-                                 origin.y + + visibleSize.height / 2 - replayItem->getContentSize().height/2 - 400));
+                                 origin.y + + visibleSize.height / 2 - backItem->getContentSize().height/2 - 400));
     auto menu = Menu::create(replayItem, backItem, NULL);
     menu->setPosition(Vec2::ZERO);
     addChild(menu, 1);
@@ -69,11 +69,13 @@ Scene* GameOverScene::shareGameOverScene()
 
 void GameOverScene::backMenuCallback(Ref* pSender)
 {
+    CCLOG("back");
     SceneManager::sharedSceneManager()->changeScene(SceneManager::en_MainScene);
 }
 
 void GameOverScene::replayMenuCallback(Ref* pSender)
 {
+    CCLOG("replay");
     SceneManager::sharedSceneManager()->changeScene(SceneManager::en_GameScene);
 
 }

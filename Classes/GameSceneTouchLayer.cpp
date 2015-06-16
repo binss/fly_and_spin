@@ -24,8 +24,9 @@
 #define BATTERY_TAG 200
 
 #define NORMAL_SPEED 4
-#define FAST_SPEED 6
 #define SPEED_FACTOR 4
+#define SPEED_UNIT 2
+#define CREATE_UNIT 0.2
 
 
 bool GameSceneTouchLayer::init()
@@ -46,7 +47,7 @@ bool GameSceneTouchLayer::init()
     contactListener->onContactBegin = CC_CALLBACK_1(GameSceneTouchLayer::onContactBegin, this);
     eventDispatcher->addEventListenerWithSceneGraphPriority(contactListener, this);
     
-    
+    srand(time(NULL));
     Size visibleSize = Director::getInstance()->getVisibleSize();
 
     bird_A = BirdSprite::createWithType(1);
@@ -64,18 +65,21 @@ bool GameSceneTouchLayer::init()
     battery = BatterySprite::create();
     addChild(battery, 40);
     
+    streak_A = MotionStreak::create(1.0f, 50, 50, Color3B::RED, "Particles/streak_2.png");
+    streak_B = MotionStreak::create(1.0f, 50, 50, Color3B::BLUE, "Particles/streak_2.png");
+    
+    addChild(streak_A, 10);
+    addChild(streak_B, 10);
+    
     spin_center = Vec2(visibleSize.width/2 , visibleSize.height/2 - RADIUS);
     score = 0;
     score_unit = 1;
     speed = NORMAL_SPEED;
-    streak_A = MotionStreak::create(1.0f, 50, 50, Color3B::RED, "Particles/streak_2.png");
-    streak_B = MotionStreak::create(1.0f, 50, 50, Color3B::BLUE, "Particles/streak_2.png");
-
-    addChild(streak_A, 10);
-    addChild(streak_B, 10);
+    create_barrier_interval = 2.0f;
     
-    this->schedule(schedule_selector(GameSceneTouchLayer::createBarrier), 2.0f);
-    this->scheduleUpdate();
+    schedule(schedule_selector(GameSceneTouchLayer::speedUp), 20.0f);
+    schedule(schedule_selector(GameSceneTouchLayer::createBarrier), 2.0f);
+    scheduleUpdate();
 
     CocosDenshion::SimpleAudioEngine::getInstance()->playBackgroundMusic("sound/game_music.mp3", true);
     
@@ -156,7 +160,7 @@ void GameSceneTouchLayer::birdDead(int type, BirdSprite * bird){
             bird_A->stopAllActions();
             bird_B->stopAllActions();
             unscheduleAllCallbacks();
-            Director::getInstance()->getRunningScene()->getPhysicsWorld()->setSpeed(0);
+//            Director::getInstance()->getRunningScene()->getPhysicsWorld()->setSpeed(0);
             bird->becomeElectricShock();
             break;
         default:
@@ -193,31 +197,32 @@ void GameSceneTouchLayer::addBatteryPower(BirdSprite *bird){
 }
 
 void GameSceneTouchLayer::enterSuperMode(){
+    
     CocosDenshion::SimpleAudioEngine::getInstance()->setBackgroundMusicVolume(0.4f);
-
     
     Director::getInstance()->getEventDispatcher()->pauseEventListenersForTarget(this);
 
     bird_A->becomeSuperBird();
     bird_B->becomeSuperBird();
     speed = speed * SPEED_FACTOR;
-    CCLOG("%d", speed);
-    unscheduleAllCallbacks();
     score_unit = 4;
-    schedule(schedule_selector(GameSceneTouchLayer::createBarrier), 0.75f);
+    unscheduleAllCallbacks();
+    schedule(schedule_selector(GameSceneTouchLayer::createBarrier), create_barrier_interval/4);
     scheduleUpdate();
     scheduleOnce(schedule_selector(GameSceneTouchLayer::quitSuperMode), 10.0f);
 }
 
 
 void GameSceneTouchLayer::quitSuperMode(float dt){
+    
     CocosDenshion::SimpleAudioEngine::getInstance()->setBackgroundMusicVolume(0.3f);
 
     battery->nextCondition();
     speed = speed / SPEED_FACTOR;
-    unscheduleAllCallbacks();
     score_unit = 1;
-    schedule(schedule_selector(GameSceneTouchLayer::createBarrier), 3.0f);
+    unscheduleAllCallbacks();
+    schedule(schedule_selector(GameSceneTouchLayer::speedUp), 20.0f);
+    schedule(schedule_selector(GameSceneTouchLayer::createBarrier), create_barrier_interval);
     scheduleUpdate();
     
     bird_A->becomeNormalBird();
@@ -229,6 +234,7 @@ void GameSceneTouchLayer::createBarrier(float dt)
 {
     int randomType = CCRANDOM_0_1() * 100 + 1;
     Sprite *barrier;
+
     if (randomType < 50)
     {
         barrier = LightningSprite::create();
@@ -256,6 +262,7 @@ void GameSceneTouchLayer::createBarrier(float dt)
 void GameSceneTouchLayer::update(float dt)
 {
     score += score_unit;
+    
     GameScene::shareGameScene()->menuLayer->updateScore(score);
     GameScene::shareGameScene()->backgroundLayer->updateBackground(score, speed);
 
@@ -272,6 +279,19 @@ void GameSceneTouchLayer::update(float dt)
     streak_B->setPosition(bird_B->getPosition());
 }
 
+void GameSceneTouchLayer::speedUp(float dt){
+    if(speed >= 20){
+        unschedule(schedule_selector(GameSceneTouchLayer::speedUp));
+        CCLOG("stop");
+    }
+    else{
+        speed += SPEED_UNIT;
+        create_barrier_interval -= CREATE_UNIT;
+        unschedule(schedule_selector(GameSceneTouchLayer::createBarrier));
+        schedule(schedule_selector(GameSceneTouchLayer::createBarrier), create_barrier_interval);
+    }
+    CCLOG("%d", speed);
+}
 
 
 void GameSceneTouchLayer::garbageCollection(Ref *object){
@@ -281,7 +301,7 @@ void GameSceneTouchLayer::garbageCollection(Ref *object){
     {
         barrier_vector.eraseObject(sprite);
         this->removeChild(sprite,true);
-        CCLOG("clean object");
+//        CCLOG("clean object");
 
     }
 }
@@ -304,11 +324,11 @@ bool GameSceneTouchLayer::onTouchBegan(Touch* touch, Event  *event)
     
     Size visibleSize = Director::getInstance()->getVisibleSize();
     if (location.x <= visibleSize.width / 2){
-        CCLOG("left span");
+//        CCLOG("left span");
         direction = -1;
     }
     else{
-        CCLOG("right span");
+//        CCLOG("right span");
         direction = 1;
     }
     

@@ -19,7 +19,7 @@ public:
     //以下是场景枚举
     enum EnumSceneType {
         en_MainScene,               //主画面
-        en_GameScene,     //游戏画面
+        en_GameScene,               //游戏画面
         en_GameoverScene,           //gameover界面        
     };
     

@@ -56,6 +56,19 @@ void GameScene::reset(){
 void GameScene::gameOver(Ref* sender){
     UserDefault::getInstance()->setIntegerForKey("current_score", gameLayer->score);
     SceneManager::sharedSceneManager()->changeScene(SceneManager::en_GameoverScene);
+}
 
-
+void GameScene::pauseGame(){
+    if(pauseLayer){
+        pauseLayer->setVisible(true);
+    }
+    else{
+        Size visibleSize = Director::getInstance()->getVisibleSize();
+        pauseLayer = GamePauseLayer::create();
+        pauseLayer->setContentSize(Size(visibleSize.width, visibleSize.height));
+        pauseLayer->setPosition(Point(0, 0));
+        _sharedGameScene->addChild(pauseLayer, 15);
+    }
+    CocosDenshion::SimpleAudioEngine::getInstance()->pauseBackgroundMusic();
+    Director::getInstance()->pause();
 }
