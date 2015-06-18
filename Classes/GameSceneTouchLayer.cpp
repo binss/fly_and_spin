@@ -50,6 +50,7 @@ bool GameSceneTouchLayer::init()
     srand(time(NULL));
     Size visibleSize = Director::getInstance()->getVisibleSize();
 
+    // 初始化鸟
     bird_A = BirdSprite::createWithType(1);
     bird_A->setPosition(Vec2(visibleSize.width/2 - RADIUS, visibleSize.height/2 - RADIUS));
     addChild(bird_A, 30);
@@ -59,24 +60,24 @@ bool GameSceneTouchLayer::init()
     bird_B->setPosition(Vec2(visibleSize.width/2 + RADIUS, visibleSize.height/2 - RADIUS));
     addChild(bird_B, 30);
     
-    
-    barrier_vector = Vector<Sprite*>(MAX_BARRIER);
-    
+    // 初始化电池
     battery = BatterySprite::create();
     addChild(battery, 40);
     
+    // 拖尾效果
     streak_A = MotionStreak::create(1.0f, 50, 50, Color3B::RED, "Particles/streak_2.png");
     streak_B = MotionStreak::create(1.0f, 50, 50, Color3B::BLUE, "Particles/streak_2.png");
-    
     addChild(streak_A, 10);
     addChild(streak_B, 10);
     
+    barrier_vector = Vector<Sprite*>(MAX_BARRIER);
     spin_center = Vec2(visibleSize.width/2 , visibleSize.height/2 - RADIUS);
     score = 0;
     score_unit = 1;
     speed = NORMAL_SPEED;
     create_barrier_interval = 2.0f;
     
+    // 调度器
     schedule(schedule_selector(GameSceneTouchLayer::speedUp), 20.0f);
     schedule(schedule_selector(GameSceneTouchLayer::createBarrier), 2.0f);
     scheduleUpdate();
@@ -282,7 +283,7 @@ void GameSceneTouchLayer::update(float dt)
 void GameSceneTouchLayer::speedUp(float dt){
     if(speed >= 20){
         unschedule(schedule_selector(GameSceneTouchLayer::speedUp));
-        CCLOG("stop");
+        CCLOG("stop speed up");
     }
     else{
         speed += SPEED_UNIT;
@@ -290,7 +291,7 @@ void GameSceneTouchLayer::speedUp(float dt){
         unschedule(schedule_selector(GameSceneTouchLayer::createBarrier));
         schedule(schedule_selector(GameSceneTouchLayer::createBarrier), create_barrier_interval);
     }
-    CCLOG("%d", speed);
+//    CCLOG("%d", speed);
 }
 
 

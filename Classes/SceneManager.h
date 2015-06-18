@@ -23,14 +23,13 @@ public:
         en_GameoverScene,           //gameover界面        
     };
     
-    static SceneManager* sharedSceneManager();   //获取共享的场景管理器对象，用于子类调用
-    
+    static SceneManager* sharedSceneManager();
     virtual bool init();
-        
-    void changeScene(EnumSceneType enScenType);   //改变场景
+    //改变场景
+    void changeScene(EnumSceneType enScenType);
     
 private:
-    static SceneManager* _SceneManager;      //场景管理器对象
+    static SceneManager* _SceneManager;
 };
 
 #endif /* defined(__fly_and_spin__SceneManager__) */

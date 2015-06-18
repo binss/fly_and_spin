@@ -17,8 +17,8 @@ bool GameBackgroundLayer::init()
     Size visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
     
+    // 双背景滚动替换
     background = Sprite::create("building/building_A_1.png");
-//    background->setTag(700);
     background->setScaleX(visibleSize.width / background->getContentSize().width);
     background->setAnchorPoint(Vec2(0,1));
     background->setPosition(Vec2(0,background->getContentSize().height));

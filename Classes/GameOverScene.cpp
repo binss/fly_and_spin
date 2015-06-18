@@ -22,7 +22,7 @@ bool GameOverScene::init()
     label->setPosition(Vec2(origin.x + visibleSize.width/2, origin.y + visibleSize.height * 0.7));
     addChild(label, 1);
     
-    
+    // 设置分数
     char score[50];
     int highest = UserDefault::getInstance()->getIntegerForKey("highest_score", 0);
     int current = UserDefault::getInstance()->getIntegerForKey("current_score");
