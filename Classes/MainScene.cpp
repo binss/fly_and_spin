@@ -24,8 +24,11 @@ bool MainScene::init()
     
     auto title_label = Label::createWithTTF("Fly & Spin", "fonts/Marker Felt.ttf", 160);
     title_label->setPosition(Vec2(origin.x + visibleSize.width/2, origin.y + visibleSize.height * 0.85));
-    
     this->addChild(title_label, 1);
+    
+    auto name_label = Label::createWithTTF("bin( www.binsite.me )", "fonts/Marker Felt.ttf", 40);
+    name_label->setPosition(Vec2(origin.x + visibleSize.width/2 + 150, title_label->getPosition().y - 120));
+    this->addChild(name_label, 1);
     
     MenuItemFont::setFontSize(80);
     MenuItemFont::setFontName("fonts/Marker Felt.ttf");
@@ -62,6 +65,7 @@ bool MainScene::init()
     CocosDenshion::SimpleAudioEngine::getInstance()->stopBackgroundMusic();
     CocosDenshion::SimpleAudioEngine::getInstance()->setBackgroundMusicVolume(0.3f);
     CocosDenshion::SimpleAudioEngine::getInstance()->setEffectsVolume(1.0f);
+
 
     return true;
 }
