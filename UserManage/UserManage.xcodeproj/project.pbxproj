@@ -10,13 +10,28 @@
 		343A0A401B3CE3BA006C6A6C /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 343A0A3F1B3CE3BA006C6A6C /* SignUpViewController.m */; };
 		343A0A431B3D0E42006C6A6C /* UserDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 343A0A421B3D0E42006C6A6C /* UserDetailViewController.m */; };
 		343A0A491B3D4B3A006C6A6C /* button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 343A0A481B3D4B3A006C6A6C /* button@2x.png */; };
+		343A0B731B3D96D7006C6A6C /* UserManageSDK.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 343A0B721B3D96D7006C6A6C /* UserManageSDK.h */; };
+		343A0B751B3D96D7006C6A6C /* UserManageSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 343A0B741B3D96D7006C6A6C /* UserManageSDK.m */; };
+		343A0B7B1B3D96D8006C6A6C /* libUserManageSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 343A0B701B3D96D7006C6A6C /* libUserManageSDK.a */; };
+		343A0B891B3D97A7006C6A6C /* SignInViewController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34ED12701B3A8CE000D49ABF /* SignInViewController.h */; };
+		343A0B911B3D99CE006C6A6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34ED12541B3A844600D49ABF /* Main.storyboard */; };
+		343A0B9D1B3D9C73006C6A6C /* button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 343A0A481B3D4B3A006C6A6C /* button@2x.png */; };
+		343A0B9F1B3D9C8C006C6A6C /* BINDatabaseHandler.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34ED12731B3A91CC00D49ABF /* BINDatabaseHandler.h */; };
+		343A0BA01B3D9C8C006C6A6C /* AdminUserListViewControllerTableViewController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34ED12781B3A9E2400D49ABF /* AdminUserListViewControllerTableViewController.h */; };
+		343A0BA11B3D9C98006C6A6C /* SignUpViewController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 343A0A3E1B3CE3BA006C6A6C /* SignUpViewController.h */; };
+		343A0BA21B3D9C98006C6A6C /* UserDetailViewController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 343A0A411B3D0E42006C6A6C /* UserDetailViewController.h */; };
+		343A0BE71B3DA4C8006C6A6C /* BINDatabaseHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 34ED12741B3A91CC00D49ABF /* BINDatabaseHandler.m */; };
+		343A0BE81B3DA4C8006C6A6C /* AdminUserListViewControllerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34ED12791B3A9E2400D49ABF /* AdminUserListViewControllerTableViewController.m */; };
+		343A0BE91B3DA4C8006C6A6C /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34ED12711B3A8CE000D49ABF /* SignInViewController.m */; };
+		343A0BEA1B3DA4C8006C6A6C /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 343A0A3F1B3CE3BA006C6A6C /* SignUpViewController.m */; };
+		343A0BEB1B3DA4C8006C6A6C /* UserDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 343A0A421B3D0E42006C6A6C /* UserDetailViewController.m */; };
+		343A0BF41B3DA533006C6A6C /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 34ED12761B3A93A200D49ABF /* libsqlite3.0.dylib */; };
 		34ED124D1B3A844600D49ABF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 34ED124C1B3A844600D49ABF /* main.m */; };
 		34ED12501B3A844600D49ABF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 34ED124F1B3A844600D49ABF /* AppDelegate.m */; };
 		34ED12531B3A844600D49ABF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34ED12521B3A844600D49ABF /* ViewController.m */; };
 		34ED12561B3A844600D49ABF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34ED12541B3A844600D49ABF /* Main.storyboard */; };
 		34ED12581B3A844600D49ABF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34ED12571B3A844600D49ABF /* Images.xcassets */; };
 		34ED125B1B3A844600D49ABF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34ED12591B3A844600D49ABF /* LaunchScreen.xib */; };
-		34ED12671B3A844600D49ABF /* UserManageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 34ED12661B3A844600D49ABF /* UserManageTests.m */; };
 		34ED12721B3A8CE000D49ABF /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34ED12711B3A8CE000D49ABF /* SignInViewController.m */; };
 		34ED12751B3A91CC00D49ABF /* BINDatabaseHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 34ED12741B3A91CC00D49ABF /* BINDatabaseHandler.m */; };
 		34ED12771B3A93A200D49ABF /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 34ED12761B3A93A200D49ABF /* libsqlite3.0.dylib */; };
@@ -24,6 +39,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		343A0B7C1B3D96D8006C6A6C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 34ED123F1B3A844600D49ABF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 343A0B6F1B3D96D7006C6A6C;
+			remoteInfo = UserManageSDK;
+		};
+		343A0BE51B3DA449006C6A6C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 34ED123F1B3A844600D49ABF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 343A0B481B3D7A8C006C6A6C;
+			remoteInfo = UserManageResources;
+		};
 		34ED12611B3A844600D49ABF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 34ED123F1B3A844600D49ABF /* Project object */;
@@ -33,12 +62,49 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		343A0AA91B3D5BD1006C6A6C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		343A0B6E1B3D96D7006C6A6C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				343A0BA11B3D9C98006C6A6C /* SignUpViewController.h in CopyFiles */,
+				343A0BA21B3D9C98006C6A6C /* UserDetailViewController.h in CopyFiles */,
+				343A0B9F1B3D9C8C006C6A6C /* BINDatabaseHandler.h in CopyFiles */,
+				343A0BA01B3D9C8C006C6A6C /* AdminUserListViewControllerTableViewController.h in CopyFiles */,
+				343A0B891B3D97A7006C6A6C /* SignInViewController.h in CopyFiles */,
+				343A0B731B3D96D7006C6A6C /* UserManageSDK.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		343A0A3E1B3CE3BA006C6A6C /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		343A0A3F1B3CE3BA006C6A6C /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		343A0A411B3D0E42006C6A6C /* UserDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDetailViewController.h; sourceTree = "<group>"; };
 		343A0A421B3D0E42006C6A6C /* UserDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDetailViewController.m; sourceTree = "<group>"; };
 		343A0A481B3D4B3A006C6A6C /* button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button@2x.png"; sourceTree = "<group>"; };
+		343A0AB41B3D6C0B006C6A6C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		343A0AB51B3D6C0B006C6A6C /* UserManageTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserManageTests.m; sourceTree = "<group>"; };
+		343A0B491B3D7A8C006C6A6C /* UserManageSDK.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UserManageSDK.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		343A0B4C1B3D7A8C006C6A6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		343A0B701B3D96D7006C6A6C /* libUserManageSDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libUserManageSDK.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		343A0B721B3D96D7006C6A6C /* UserManageSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserManageSDK.h; sourceTree = "<group>"; };
+		343A0B741B3D96D7006C6A6C /* UserManageSDK.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserManageSDK.m; sourceTree = "<group>"; };
+		343A0B7A1B3D96D7006C6A6C /* UserManageSDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UserManageSDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		343A0B801B3D96D8006C6A6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34ED12471B3A844600D49ABF /* UserManage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UserManage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34ED124B1B3A844600D49ABF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34ED124C1B3A844600D49ABF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -50,8 +116,6 @@
 		34ED12571B3A844600D49ABF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		34ED125A1B3A844600D49ABF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		34ED12601B3A844600D49ABF /* UserManageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UserManageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		34ED12651B3A844600D49ABF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		34ED12661B3A844600D49ABF /* UserManageTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserManageTests.m; sourceTree = "<group>"; };
 		34ED12701B3A8CE000D49ABF /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
 		34ED12711B3A8CE000D49ABF /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
 		34ED12731B3A91CC00D49ABF /* BINDatabaseHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BINDatabaseHandler.h; sourceTree = "<group>"; };
@@ -62,6 +126,29 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		343A0B461B3D7A8C006C6A6C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		343A0B6D1B3D96D7006C6A6C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				343A0BF41B3DA533006C6A6C /* libsqlite3.0.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		343A0B771B3D96D7006C6A6C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				343A0B7B1B3D96D8006C6A6C /* libUserManageSDK.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		34ED12441B3A844600D49ABF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -88,12 +175,65 @@
 			path = MyResources;
 			sourceTree = SOURCE_ROOT;
 		};
+		343A0AB31B3D6C0B006C6A6C /* UserManageTests */ = {
+			isa = PBXGroup;
+			children = (
+				343A0AB41B3D6C0B006C6A6C /* Info.plist */,
+				343A0AB51B3D6C0B006C6A6C /* UserManageTests.m */,
+			);
+			path = UserManageTests;
+			sourceTree = "<group>";
+		};
+		343A0B4A1B3D7A8C006C6A6C /* UserManageResources */ = {
+			isa = PBXGroup;
+			children = (
+				343A0B4B1B3D7A8C006C6A6C /* Supporting Files */,
+			);
+			path = UserManageResources;
+			sourceTree = "<group>";
+		};
+		343A0B4B1B3D7A8C006C6A6C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				343A0B4C1B3D7A8C006C6A6C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		343A0B711B3D96D7006C6A6C /* UserManageSDK */ = {
+			isa = PBXGroup;
+			children = (
+				343A0B721B3D96D7006C6A6C /* UserManageSDK.h */,
+				343A0B741B3D96D7006C6A6C /* UserManageSDK.m */,
+			);
+			path = UserManageSDK;
+			sourceTree = "<group>";
+		};
+		343A0B7E1B3D96D8006C6A6C /* UserManageSDKTests */ = {
+			isa = PBXGroup;
+			children = (
+				343A0B7F1B3D96D8006C6A6C /* Supporting Files */,
+			);
+			path = UserManageSDKTests;
+			sourceTree = "<group>";
+		};
+		343A0B7F1B3D96D8006C6A6C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				343A0B801B3D96D8006C6A6C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		34ED123E1B3A844600D49ABF = {
 			isa = PBXGroup;
 			children = (
 				34ED12761B3A93A200D49ABF /* libsqlite3.0.dylib */,
+				343A0AB31B3D6C0B006C6A6C /* UserManageTests */,
 				34ED12491B3A844600D49ABF /* UserManage */,
-				34ED12631B3A844600D49ABF /* UserManageTests */,
+				343A0B4A1B3D7A8C006C6A6C /* UserManageResources */,
+				343A0B711B3D96D7006C6A6C /* UserManageSDK */,
+				343A0B7E1B3D96D8006C6A6C /* UserManageSDKTests */,
 				34ED12481B3A844600D49ABF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -103,6 +243,9 @@
 			children = (
 				34ED12471B3A844600D49ABF /* UserManage.app */,
 				34ED12601B3A844600D49ABF /* UserManageTests.xctest */,
+				343A0B491B3D7A8C006C6A6C /* UserManageSDK.bundle */,
+				343A0B701B3D96D7006C6A6C /* libUserManageSDK.a */,
+				343A0B7A1B3D96D7006C6A6C /* UserManageSDKTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -142,26 +285,62 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		34ED12631B3A844600D49ABF /* UserManageTests */ = {
-			isa = PBXGroup;
-			children = (
-				34ED12661B3A844600D49ABF /* UserManageTests.m */,
-				34ED12641B3A844600D49ABF /* Supporting Files */,
-			);
-			path = UserManageTests;
-			sourceTree = "<group>";
-		};
-		34ED12641B3A844600D49ABF /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				34ED12651B3A844600D49ABF /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		343A0B481B3D7A8C006C6A6C /* UserManageResources */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 343A0B4D1B3D7A8C006C6A6C /* Build configuration list for PBXNativeTarget "UserManageResources" */;
+			buildPhases = (
+				343A0B451B3D7A8C006C6A6C /* Sources */,
+				343A0B461B3D7A8C006C6A6C /* Frameworks */,
+				343A0B471B3D7A8C006C6A6C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UserManageResources;
+			productName = UserManageResources;
+			productReference = 343A0B491B3D7A8C006C6A6C /* UserManageSDK.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+		343A0B6F1B3D96D7006C6A6C /* UserManageSDK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 343A0B811B3D96D8006C6A6C /* Build configuration list for PBXNativeTarget "UserManageSDK" */;
+			buildPhases = (
+				343A0B6C1B3D96D7006C6A6C /* Sources */,
+				343A0B6D1B3D96D7006C6A6C /* Frameworks */,
+				343A0B6E1B3D96D7006C6A6C /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				343A0BE61B3DA449006C6A6C /* PBXTargetDependency */,
+			);
+			name = UserManageSDK;
+			productName = UserManageSDK;
+			productReference = 343A0B701B3D96D7006C6A6C /* libUserManageSDK.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		343A0B791B3D96D7006C6A6C /* UserManageSDKTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 343A0B841B3D96D8006C6A6C /* Build configuration list for PBXNativeTarget "UserManageSDKTests" */;
+			buildPhases = (
+				343A0B761B3D96D7006C6A6C /* Sources */,
+				343A0B771B3D96D7006C6A6C /* Frameworks */,
+				343A0B781B3D96D7006C6A6C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				343A0B7D1B3D96D8006C6A6C /* PBXTargetDependency */,
+			);
+			name = UserManageSDKTests;
+			productName = UserManageSDKTests;
+			productReference = 343A0B7A1B3D96D7006C6A6C /* UserManageSDKTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		34ED12461B3A844600D49ABF /* UserManage */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 34ED126A1B3A844600D49ABF /* Build configuration list for PBXNativeTarget "UserManage" */;
@@ -169,6 +348,7 @@
 				34ED12431B3A844600D49ABF /* Sources */,
 				34ED12441B3A844600D49ABF /* Frameworks */,
 				34ED12451B3A844600D49ABF /* Resources */,
+				343A0AA91B3D5BD1006C6A6C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -206,6 +386,15 @@
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = bin;
 				TargetAttributes = {
+					343A0B481B3D7A8C006C6A6C = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
+					343A0B6F1B3D96D7006C6A6C = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
+					343A0B791B3D96D7006C6A6C = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
 					34ED12461B3A844600D49ABF = {
 						CreatedOnToolsVersion = 6.3.2;
 					};
@@ -230,11 +419,30 @@
 			targets = (
 				34ED12461B3A844600D49ABF /* UserManage */,
 				34ED125F1B3A844600D49ABF /* UserManageTests */,
+				343A0B481B3D7A8C006C6A6C /* UserManageResources */,
+				343A0B6F1B3D96D7006C6A6C /* UserManageSDK */,
+				343A0B791B3D96D7006C6A6C /* UserManageSDKTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		343A0B471B3D7A8C006C6A6C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				343A0B9D1B3D9C73006C6A6C /* button@2x.png in Resources */,
+				343A0B911B3D99CE006C6A6C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		343A0B781B3D96D7006C6A6C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		34ED12451B3A844600D49ABF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -256,6 +464,33 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		343A0B451B3D7A8C006C6A6C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		343A0B6C1B3D96D7006C6A6C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				343A0BE71B3DA4C8006C6A6C /* BINDatabaseHandler.m in Sources */,
+				343A0BE81B3DA4C8006C6A6C /* AdminUserListViewControllerTableViewController.m in Sources */,
+				343A0BE91B3DA4C8006C6A6C /* SignInViewController.m in Sources */,
+				343A0BEA1B3DA4C8006C6A6C /* SignUpViewController.m in Sources */,
+				343A0BEB1B3DA4C8006C6A6C /* UserDetailViewController.m in Sources */,
+				343A0B751B3D96D7006C6A6C /* UserManageSDK.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		343A0B761B3D96D7006C6A6C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		34ED12431B3A844600D49ABF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -275,13 +510,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34ED12671B3A844600D49ABF /* UserManageTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		343A0B7D1B3D96D8006C6A6C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 343A0B6F1B3D96D7006C6A6C /* UserManageSDK */;
+			targetProxy = 343A0B7C1B3D96D8006C6A6C /* PBXContainerItemProxy */;
+		};
+		343A0BE61B3DA449006C6A6C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 343A0B481B3D7A8C006C6A6C /* UserManageResources */;
+			targetProxy = 343A0BE51B3DA449006C6A6C /* PBXContainerItemProxy */;
+		};
 		34ED12621B3A844600D49ABF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 34ED12461B3A844600D49ABF /* UserManage */;
@@ -309,6 +553,89 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		343A0B4E1B3D7A8C006C6A6C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = UserManageResources/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = UserManageSDK;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		343A0B4F1B3D7A8C006C6A6C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = NO;
+				INFOPLIST_FILE = UserManageResources/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = UserManageSDK;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		343A0B821B3D96D8006C6A6C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		343A0B831B3D96D8006C6A6C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		343A0B851B3D96D8006C6A6C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = UserManageSDKTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		343A0B861B3D96D8006C6A6C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = UserManageSDKTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		34ED12681B3A844600D49ABF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -446,6 +773,33 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		343A0B4D1B3D7A8C006C6A6C /* Build configuration list for PBXNativeTarget "UserManageResources" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				343A0B4E1B3D7A8C006C6A6C /* Debug */,
+				343A0B4F1B3D7A8C006C6A6C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		343A0B811B3D96D8006C6A6C /* Build configuration list for PBXNativeTarget "UserManageSDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				343A0B821B3D96D8006C6A6C /* Debug */,
+				343A0B831B3D96D8006C6A6C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		343A0B841B3D96D8006C6A6C /* Build configuration list for PBXNativeTarget "UserManageSDKTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				343A0B851B3D96D8006C6A6C /* Debug */,
+				343A0B861B3D96D8006C6A6C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		34ED12421B3A844600D49ABF /* Build configuration list for PBXProject "UserManage" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -55,6 +55,8 @@
             else
             {
                 NSLog(@"创建表成功");
+                [self signup:@"admin" withPassword:@"123456" withName:@"admin"];
+                NSLog(@"管理员帐号创建成功");
                 
             }
         }
@@ -136,11 +138,10 @@
     return false;
 }
 
-- (BOOL)setImagePath:(NSString*)imagePath withUsername:(NSString*)username{
-    NSString *sql = [NSString stringWithFormat:@"UPDATE USER SET image = '%@' WHERE username = '%@", imagePath, username];
+- (BOOL)modifyName:(NSString*)name forUsername:(NSString*)username{
+    NSString *sql = [NSString stringWithFormat:@"UPDATE USER SET name = '%@' WHERE username = '%@'", name, username];
     
     sqlite3_stmt *statement;
-    
     
     if (sqlite3_prepare_v2(db, [sql UTF8String], -1, &statement, nil) == SQLITE_OK)
     {

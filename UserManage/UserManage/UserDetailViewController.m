@@ -24,7 +24,7 @@
     [self.usernameLabel setText:username];
     [self.nameLabel setText:[userDetail objectForKey:@"name"]];
     [self.timeLabel setText:[userDetail objectForKey:@"time"]];
-    
+
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *path = [[paths objectAtIndex:0] stringByAppendingPathComponent:[NSString stringWithFormat:@"UserImage/%@.png", username]];
     UIImage *userImage = [UIImage imageWithContentsOfFile:path];
@@ -96,4 +96,25 @@
     [UIImagePNGRepresentation(image)writeToFile:path atomically:YES];
 }
 
+- (IBAction)modifynameButtonPress:(UIButton *)sender {
+    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"修改昵称"
+                                                    message:@"请输入新的昵称："
+                                                   delegate:self
+                                          cancelButtonTitle:@"cancel"
+                                          otherButtonTitles:@"OK", nil];
+    // 基本输入框，显示实际输入的内容
+    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+    [alert show];
+}
+
+- (IBAction)startgameButtoPressed:(UIButton *)sender {
+}
+
+-(void)alertView:(UIAlertView*)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    //得到输入框
+    UITextField *textfield = [alertView textFieldAtIndex:0];
+    NSLog(@"new name:%@", textfield.text);
+    [[BINDatabaseHandler databaseHandler] modifyName:textfield.text forUsername:username];
+}
 @end

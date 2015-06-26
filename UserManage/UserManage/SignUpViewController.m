@@ -51,11 +51,10 @@
                 if([[BINDatabaseHandler databaseHandler] signup:self.usernameTextField.text withPassword:self.passwordTextField.text withName:self.nameTextField.text]){
                     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示"
                                                                     message:@"注册成功！"
-                                                                   delegate:nil
+                                                                   delegate:self
                                                           cancelButtonTitle:@"OK"
                                                           otherButtonTitles:nil];
                     [alert show];
-                    [self.navigationController popViewControllerAnimated:YES];
                 }
                 else{
                     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示"
@@ -108,5 +107,9 @@
     
 }
 
+-(void)alertView:(UIAlertView*)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 @end

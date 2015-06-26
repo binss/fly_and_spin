@@ -9,9 +9,84 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>UserManageResources.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>UserManageSDK.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>UserManageSDKResource.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>343A0A701B3D5A57006C6A6C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>343A0A7A1B3D5A58006C6A6C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>343A0A8C1B3D5BD1006C6A6C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>343A0A961B3D5BD1006C6A6C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>343A0ABB1B3D6C42006C6A6C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>343A0AC51B3D6C42006C6A6C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>343A0AD71B3D6EFB006C6A6C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>343A0AE11B3D6EFB006C6A6C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>343A0B3D1B3D7A3E006C6A6C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>343A0B481B3D7A8C006C6A6C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>343A0B6F1B3D96D7006C6A6C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>343A0B791B3D96D7006C6A6C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>34ED12461B3A844600D49ABF</key>
 		<dict>
 			<key>primary</key>

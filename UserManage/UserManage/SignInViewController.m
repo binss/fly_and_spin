@@ -88,4 +88,8 @@
     
 }
 
+-(void)haha{
+    NSLog(@"haha");
+}
+
 @end
