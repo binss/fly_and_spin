@@ -30,6 +30,13 @@ bool MainScene::init()
     name_label->setPosition(Vec2(origin.x + visibleSize.width/2 + 150, title_label->getPosition().y - 120));
     this->addChild(name_label, 1);
     
+    std::string welcome_string = "欢迎你： " + UserDefault::getInstance()->getStringForKey("name");
+    
+    auto welcome_label = Label::createWithSystemFont(welcome_string, "createWithSystemFont", 30);
+    welcome_label->setPosition(Vec2(visibleSize.width/2, 50));
+    this->addChild(welcome_label, 1);
+    
+    
     MenuItemFont::setFontSize(80);
     MenuItemFont::setFontName("fonts/Marker Felt.ttf");
     

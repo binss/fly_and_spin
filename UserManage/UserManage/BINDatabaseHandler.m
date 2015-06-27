@@ -77,9 +77,9 @@
 }
 
 
-- (BOOL)signinVerify:(NSString*)username withPassword:(NSString*)password{
+- (NSDictionary *)signin:(NSString*)username withPassword:(NSString*)password{
     
-    NSString *sql = [NSString stringWithFormat:@"SELECT * FROM USER WHERE username ='%@' and password = '%@'", username, [self md5Encrypt:password]];
+    NSString *sql = [NSString stringWithFormat:@"SELECT id, name, time FROM USER WHERE username ='%@' and password = '%@'", username, [self md5Encrypt:password]];
     
     sqlite3_stmt *statement;
     
@@ -88,10 +88,12 @@
     {
         if (sqlite3_step(statement) == SQLITE_ROW)
         {
-            self->user = username;
-            self->image = [[NSString alloc] initWithUTF8String:(char *)sqlite3_column_text(statement, 1)];
+            NSString *id = [[NSString alloc] initWithUTF8String:(char *)sqlite3_column_text(statement, 0)];
+            NSString *name = [[NSString alloc] initWithUTF8String:(char *)sqlite3_column_text(statement, 1)];
+            NSString *time = [[NSString alloc] initWithUTF8String:(char *)sqlite3_column_text(statement, 2)];
+            NSDictionary *user = @{@"id":id, @"username":username, @"name":name, @"password":password, @"time":time};
             sqlite3_finalize(statement);
-            return true;
+            return user;
         }
     
         sqlite3_finalize(statement);

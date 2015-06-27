@@ -21,15 +21,21 @@
     // Do any additional setup after loading the view.
     NSLog(@"%@", userDetail);
     username = [userDetail objectForKey:@"username"];
+    name = [userDetail objectForKey:@"name"];
+
     [self.usernameLabel setText:username];
-    [self.nameLabel setText:[userDetail objectForKey:@"name"]];
+    [self.nameLabel setText:name];
     [self.timeLabel setText:[userDetail objectForKey:@"time"]];
 
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *path = [[paths objectAtIndex:0] stringByAppendingPathComponent:[NSString stringWithFormat:@"UserImage/%@.png", username]];
     UIImage *userImage = [UIImage imageWithContentsOfFile:path];
-    if(userImage)
+    if(userImage){
         [self.userImageView setImage:[UIImage imageWithContentsOfFile:path]];
+    }
+    else{
+        [self.userImageView setImage:[UIImage imageNamed:@"UserManageSDK.bundle/no_image"]];
+    }
     self.userImageView.userInteractionEnabled = YES;
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapUserImage:)];
     [singleTap setNumberOfTouchesRequired:1];
@@ -107,14 +113,28 @@
     [alert show];
 }
 
-- (IBAction)startgameButtoPressed:(UIButton *)sender {
+- (IBAction)startgameButtonPressed:(UIButton *)sender {
+    NSLog(@"start game button pressed");
+    NSMutableDictionary* userInfo = [NSMutableDictionary dictionary];
+    [userInfo setValue:username forKey:@"username"];
+    [userInfo setValue:name forKey:@"name"];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"StartGame" object:@"userInfo" userInfo:userInfo];
 }
+
 
 -(void)alertView:(UIAlertView*)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     //得到输入框
     UITextField *textfield = [alertView textFieldAtIndex:0];
-    NSLog(@"new name:%@", textfield.text);
-    [[BINDatabaseHandler databaseHandler] modifyName:textfield.text forUsername:username];
+    NSString *new_name = textfield.text;
+    NSLog(@"try to set new name:%@", new_name);
+    if([new_name isEqualToString:@""]){
+        NSLog(@"昵称不能为空");
+    }
+    else{
+        [[BINDatabaseHandler databaseHandler] modifyName:textfield.text forUsername:username];
+        name = textfield.text;
+        self.nameLabel.text = new_name;
+    }
 }
 @end

@@ -27,12 +27,8 @@
 #import "cocos2d.h"
 #import "AppDelegate.h"
 #import "RootViewController.h"
+#import "UserManageSDK.h"
 
-#import "SignInViewController.h"
-#import "SignUpViewController.h"
-#import "BINDatabaseHandler.h"
-#import "UserDetailViewController.h"
-#import "AdminUserListViewControllerTableViewController.h"
 
 @implementation AppController
 
@@ -42,19 +38,12 @@
 // cocos2d application instance
 static AppDelegate s_sharedApplication;
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
-
-//    cocos2d::Application *app = cocos2d::Application::getInstance();
-//    app->initGLContextAttrs();
-//    cocos2d::GLViewImpl::convertAttrs();
-
-    // Override point for customization after application launch.
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
     // Add the view controller's view to the window and display.
     window = [[UIWindow alloc] initWithFrame: [[UIScreen mainScreen] bounds]];
 
     
-    // bin add
     [SignInViewController class];
     [SignUpViewController class];
     [BINDatabaseHandler class];
@@ -63,55 +52,13 @@ static AppDelegate s_sharedApplication;
     
     
     NSBundle *myBundle = [NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:@"UserManageSDK" ofType:@"bundle"]];
-    NSLog(@"%@", myBundle);
+//    NSLog(@"%@", myBundle);
     UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:myBundle];
     window.rootViewController = [mainStoryboard instantiateInitialViewController];
     [window makeKeyAndVisible];
-    return YES;
     
-    // bin end
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(startGameCallBack:) name:@"StartGame" object:nil];
     
-    
-    
-//    
-//    // Init the CCEAGLView
-//    CCEAGLView *eaglView = [CCEAGLView viewWithFrame: [window bounds]
-//                                         pixelFormat: (NSString*)cocos2d::GLViewImpl::_pixelFormat
-//                                         depthFormat: cocos2d::GLViewImpl::_depthFormat
-//                                  preserveBackbuffer: NO
-//                                          sharegroup: nil
-//                                       multiSampling: NO
-//                                     numberOfSamples: 0 ];
-//    
-//    // Enable or disable multiple touches
-//    [eaglView setMultipleTouchEnabled:NO];
-//
-//    // Use RootViewController manage CCEAGLView 
-//    _viewController = [[RootViewController alloc] initWithNibName:nil bundle:nil];
-//    _viewController.wantsFullScreenLayout = YES;
-//    _viewController.view = eaglView;
-//
-//    // Set RootViewController to window
-//    if ( [[UIDevice currentDevice].systemVersion floatValue] < 6.0)
-//    {
-//        // warning: addSubView doesn't work on iOS6
-//        [window addSubview: _viewController.view];
-//    }
-//    else
-//    {
-//        // use this method on ios6
-//        [window setRootViewController:_viewController];
-//    }
-//
-//    [window makeKeyAndVisible];
-//
-//    [[UIApplication sharedApplication] setStatusBarHidden:true];
-//
-//    // IMPORTANT: Setting the GLView should be done after creating the RootViewController
-//    cocos2d::GLView *glview = cocos2d::GLViewImpl::createWithEAGLView(eaglView);
-//    cocos2d::Director::getInstance()->setOpenGLView(glview);
-//
-//    app->run();
 
     return YES;
 }
@@ -172,5 +119,59 @@ static AppDelegate s_sharedApplication;
     [super dealloc];
 }
 
+-(void)startGameCallBack:(NSNotification*)notification{
+    NSString *nameString = [notification name];
+    NSString *objectString = [notification object];
+    NSDictionary *userInfo = [notification userInfo];
+    
+    NSLog(@"Notification name = %@, object = %@, username = %@, name = %@",nameString, objectString, [userInfo objectForKey:@"username"], [userInfo objectForKey:@"name"]);
+    
+    cocos2d::UserDefault::getInstance()->setStringForKey("username", [[userInfo objectForKey:@"username"] UTF8String]);
+    cocos2d::UserDefault::getInstance()->setStringForKey("name", [[userInfo objectForKey:@"name"] UTF8String]);
+    
+    
+    cocos2d::Application *app = cocos2d::Application::getInstance();
+    app->initGLContextAttrs();
+    cocos2d::GLViewImpl::convertAttrs();
+    // Init the CCEAGLView
+    CCEAGLView *eaglView = [CCEAGLView viewWithFrame: [window bounds]
+                                         pixelFormat: (NSString*)cocos2d::GLViewImpl::_pixelFormat
+                                         depthFormat: cocos2d::GLViewImpl::_depthFormat
+                                  preserveBackbuffer: NO
+                                          sharegroup: nil
+                                       multiSampling: NO
+                                     numberOfSamples: 0 ];
+
+    // Enable or disable multiple touches
+    [eaglView setMultipleTouchEnabled:NO];
+
+    // Use RootViewController manage CCEAGLView
+    _viewController = [[RootViewController alloc] initWithNibName:nil bundle:nil];
+    _viewController.wantsFullScreenLayout = YES;
+    _viewController.view = eaglView;
+
+    // Set RootViewController to window
+    if ( [[UIDevice currentDevice].systemVersion floatValue] < 6.0)
+    {
+        // warning: addSubView doesn't work on iOS6
+        [window addSubview: _viewController.view];
+    }
+    else
+    {
+        // use this method on ios6
+        [window setRootViewController:_viewController];
+    }
+
+    [window makeKeyAndVisible];
+
+    [[UIApplication sharedApplication] setStatusBarHidden:true];
+
+    // IMPORTANT: Setting the GLView should be done after creating the RootViewController
+    cocos2d::GLView *glview = cocos2d::GLViewImpl::createWithEAGLView(eaglView);
+    cocos2d::Director::getInstance()->setOpenGLView(glview);
+
+    app->run();
+    
+}
 
 @end

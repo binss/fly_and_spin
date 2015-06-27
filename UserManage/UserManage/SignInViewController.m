@@ -15,10 +15,12 @@
 
 @implementation SignInViewController
 
+@synthesize user;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    NSLog(@"dudu");
+    NSLog(@"Load UserManageSDK successfully");
     self.signButton.enabled = NO;
     [self.usernameTextField becomeFirstResponder];
 
@@ -29,20 +31,21 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"normalSignIn"])
+    {
+        NSLog(@"send");
+        id theSegue = segue.destinationViewController;
+        [theSegue setValue:user forKey:@"userDetail"];
+    }
 }
-*/
 
 
 - (IBAction)signButtonPressed:(UIButton *)sender {
     if(self.usernameTextField.text.length && self.passwordTextField.text.length){
-        if([[BINDatabaseHandler databaseHandler] signinVerify:self.usernameTextField.text withPassword:self.passwordTextField.text]){
+        user = [[BINDatabaseHandler databaseHandler] signin:self.usernameTextField.text withPassword:self.passwordTextField.text];
+        if(user){
             if([self.usernameTextField.text isEqual: @"admin"]){
                 
                 [self performSegueWithIdentifier:@"adminSignIn" sender:self];
@@ -86,10 +89,6 @@
         self.signButton.enabled = NO;
     }
     
-}
-
--(void)haha{
-    NSLog(@"haha");
 }
 
 @end

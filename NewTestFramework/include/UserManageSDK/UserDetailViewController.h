@@ -10,6 +10,9 @@
 
 @interface UserDetailViewController : UIViewController<UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIAlertViewDelegate>{
     NSString * username;
+    NSString * name;
+
+
 }
 @property(nonatomic, weak) NSDictionary *userDetail;
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
@@ -18,6 +21,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *userImageView;
 - (IBAction)modifynameButtonPress:(UIButton *)sender;
 
-- (IBAction)startgameButtoPressed:(UIButton *)sender;
+- (IBAction)startgameButtonPressed:(UIButton *)sender;
 
 @end

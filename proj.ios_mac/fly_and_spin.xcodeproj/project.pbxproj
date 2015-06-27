@@ -12,14 +12,15 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
+		3404D3301B3E576F00DD5106 /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3404D32F1B3E576F00DD5106 /* AppController.mm */; };
 		340C27A21B27D02B00B2AAA7 /* GameMenuLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 340C27A01B27D02B00B2AAA7 /* GameMenuLayer.cpp */; };
 		3430219D1B2C745500E14786 /* MainScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3430219B1B2C745400E14786 /* MainScene.cpp */; };
 		3430219E1B2C76D600E14786 /* MainScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3430219B1B2C745400E14786 /* MainScene.cpp */; };
 		343021A01B2C7F2F00E14786 /* help.png in Resources */ = {isa = PBXBuildFile; fileRef = 3430219F1B2C7F2F00E14786 /* help.png */; };
 		343021A11B2C7F9200E14786 /* help.png in Resources */ = {isa = PBXBuildFile; fileRef = 3430219F1B2C7F2F00E14786 /* help.png */; };
-		343A0C1A1B3DAC75006C6A6C /* libUserManageSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 343A0C181B3DAC75006C6A6C /* libUserManageSDK.a */; };
-		343A0C1B1B3DAC75006C6A6C /* UserManageSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 343A0C191B3DAC75006C6A6C /* UserManageSDK.bundle */; };
 		343A0C1D1B3DAF22006C6A6C /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 343A0C1C1B3DAF22006C6A6C /* libsqlite3.0.dylib */; };
+		345E5CC51B3E684400C2B66D /* libUserManageSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 345E5CC31B3E684400C2B66D /* libUserManageSDK.a */; };
+		345E5CC61B3E684400C2B66D /* UserManageSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 345E5CC41B3E684400C2B66D /* UserManageSDK.bundle */; };
 		346466D01B25C6BE00E26FB9 /* CircleAction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 346466CE1B25C6BE00E26FB9 /* CircleAction.cpp */; };
 		346466D81B25D13D00E26FB9 /* GameSceneTouchLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 346466D61B25D13D00E26FB9 /* GameSceneTouchLayer.cpp */; };
 		346869FF1B2DE434001B10EF /* sound in Resources */ = {isa = PBXBuildFile; fileRef = 346869FE1B2DE434001B10EF /* sound */; };
@@ -64,7 +65,6 @@
 		46880B8A19C43A87006E1F66 /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8619C43A87006E1F66 /* GameScene.cpp */; };
 		46880B8B19C43A87006E1F66 /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8619C43A87006E1F66 /* GameScene.cpp */; };
 		503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 503AE0F617EB97AB00D1A890 /* Icon.icns */; };
-		503AE10017EB989F00D1A890 /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FB17EB989F00D1A890 /* AppController.mm */; };
 		503AE10117EB989F00D1A890 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FC17EB989F00D1A890 /* main.m */; };
 		503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FF17EB989F00D1A890 /* RootViewController.mm */; };
 		503AE10517EB98FF00D1A890 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503AE10317EB98FF00D1A890 /* main.cpp */; };
@@ -146,20 +146,21 @@
 		1D6058910D05DD3D006BFB54 /* fly_and_spin iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fly_and_spin iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		3404D32F1B3E576F00DD5106 /* AppController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppController.mm; path = ios/AppController.mm; sourceTree = SOURCE_ROOT; };
 		340C27A01B27D02B00B2AAA7 /* GameMenuLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameMenuLayer.cpp; sourceTree = "<group>"; };
 		340C27A11B27D02B00B2AAA7 /* GameMenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameMenuLayer.h; sourceTree = "<group>"; };
 		3430219B1B2C745400E14786 /* MainScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MainScene.cpp; sourceTree = "<group>"; };
 		3430219C1B2C745500E14786 /* MainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainScene.h; sourceTree = "<group>"; };
 		3430219F1B2C7F2F00E14786 /* help.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = help.png; sourceTree = "<group>"; };
-		343A0C121B3DAC75006C6A6C /* AdminUserListViewControllerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdminUserListViewControllerTableViewController.h; sourceTree = "<group>"; };
-		343A0C131B3DAC75006C6A6C /* BINDatabaseHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BINDatabaseHandler.h; sourceTree = "<group>"; };
-		343A0C141B3DAC75006C6A6C /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
-		343A0C151B3DAC75006C6A6C /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
-		343A0C161B3DAC75006C6A6C /* UserDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDetailViewController.h; sourceTree = "<group>"; };
-		343A0C171B3DAC75006C6A6C /* UserManageSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserManageSDK.h; sourceTree = "<group>"; };
-		343A0C181B3DAC75006C6A6C /* libUserManageSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libUserManageSDK.a; path = lib/libUserManageSDK.a; sourceTree = "<group>"; };
-		343A0C191B3DAC75006C6A6C /* UserManageSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = UserManageSDK.bundle; path = lib/UserManageSDK.bundle; sourceTree = "<group>"; };
 		343A0C1C1B3DAF22006C6A6C /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/usr/lib/libsqlite3.0.dylib; sourceTree = DEVELOPER_DIR; };
+		345E5CBD1B3E684400C2B66D /* AdminUserListViewControllerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdminUserListViewControllerTableViewController.h; sourceTree = "<group>"; };
+		345E5CBE1B3E684400C2B66D /* BINDatabaseHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BINDatabaseHandler.h; sourceTree = "<group>"; };
+		345E5CBF1B3E684400C2B66D /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
+		345E5CC01B3E684400C2B66D /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
+		345E5CC11B3E684400C2B66D /* UserDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDetailViewController.h; sourceTree = "<group>"; };
+		345E5CC21B3E684400C2B66D /* UserManageSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserManageSDK.h; sourceTree = "<group>"; };
+		345E5CC31B3E684400C2B66D /* libUserManageSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libUserManageSDK.a; path = lib/UserManageSDK/libUserManageSDK.a; sourceTree = "<group>"; };
+		345E5CC41B3E684400C2B66D /* UserManageSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = UserManageSDK.bundle; path = lib/UserManageSDK/UserManageSDK.bundle; sourceTree = "<group>"; };
 		346466CE1B25C6BE00E26FB9 /* CircleAction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CircleAction.cpp; sourceTree = "<group>"; };
 		346466CF1B25C6BE00E26FB9 /* CircleAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleAction.h; sourceTree = "<group>"; };
 		346466D61B25D13D00E26FB9 /* GameSceneTouchLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameSceneTouchLayer.cpp; sourceTree = "<group>"; };
@@ -196,7 +197,6 @@
 		503AE0F617EB97AB00D1A890 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 		503AE0F717EB97AB00D1A890 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		503AE0FA17EB989F00D1A890 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppController.h; path = ios/AppController.h; sourceTree = SOURCE_ROOT; };
-		503AE0FB17EB989F00D1A890 /* AppController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppController.mm; path = ios/AppController.mm; sourceTree = SOURCE_ROOT; };
 		503AE0FC17EB989F00D1A890 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ios/main.m; sourceTree = SOURCE_ROOT; };
 		503AE0FD17EB989F00D1A890 /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Prefix.pch; path = ios/Prefix.pch; sourceTree = SOURCE_ROOT; };
 		503AE0FE17EB989F00D1A890 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RootViewController.h; path = ios/RootViewController.h; sourceTree = SOURCE_ROOT; };
@@ -248,6 +248,7 @@
 				52B47A471A53D09C004E4C60 /* Security.framework in Frameworks */,
 				1AC6FB30180E99EB004C840B /* libcocos2d iOS.a in Frameworks */,
 				D6B0611B1803AB670077942B /* CoreMotion.framework in Frameworks */,
+				345E5CC51B3E684400C2B66D /* libUserManageSDK.a in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
@@ -257,7 +258,6 @@
 				D44C620C132DFF330009C878 /* OpenAL.framework in Frameworks */,
 				D44C620E132DFF430009C878 /* AVFoundation.framework in Frameworks */,
 				D44C6210132DFF4E0009C878 /* AudioToolbox.framework in Frameworks */,
-				343A0C1A1B3DAC75006C6A6C /* libUserManageSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,7 +287,7 @@
 			children = (
 				5087E77117EB970100C73F5D /* Icons */,
 				503AE0FA17EB989F00D1A890 /* AppController.h */,
-				503AE0FB17EB989F00D1A890 /* AppController.mm */,
+				3404D32F1B3E576F00DD5106 /* AppController.mm */,
 				503AE0FC17EB989F00D1A890 /* main.m */,
 				503AE0FD17EB989F00D1A890 /* Prefix.pch */,
 				503AE0FE17EB989F00D1A890 /* RootViewController.h */,
@@ -354,24 +354,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		343A0C101B3DAC75006C6A6C /* include */ = {
+		345E5CBB1B3E684400C2B66D /* include */ = {
 			isa = PBXGroup;
 			children = (
-				343A0C111B3DAC75006C6A6C /* UserManageSDK */,
+				345E5CBC1B3E684400C2B66D /* UserManageSDK */,
 			);
 			name = include;
-			path = lib/include;
+			path = lib/UserManageSDK/include;
 			sourceTree = "<group>";
 		};
-		343A0C111B3DAC75006C6A6C /* UserManageSDK */ = {
+		345E5CBC1B3E684400C2B66D /* UserManageSDK */ = {
 			isa = PBXGroup;
 			children = (
-				343A0C121B3DAC75006C6A6C /* AdminUserListViewControllerTableViewController.h */,
-				343A0C131B3DAC75006C6A6C /* BINDatabaseHandler.h */,
-				343A0C141B3DAC75006C6A6C /* SignInViewController.h */,
-				343A0C151B3DAC75006C6A6C /* SignUpViewController.h */,
-				343A0C161B3DAC75006C6A6C /* UserDetailViewController.h */,
-				343A0C171B3DAC75006C6A6C /* UserManageSDK.h */,
+				345E5CBD1B3E684400C2B66D /* AdminUserListViewControllerTableViewController.h */,
+				345E5CBE1B3E684400C2B66D /* BINDatabaseHandler.h */,
+				345E5CBF1B3E684400C2B66D /* SignInViewController.h */,
+				345E5CC01B3E684400C2B66D /* SignUpViewController.h */,
+				345E5CC11B3E684400C2B66D /* UserDetailViewController.h */,
+				345E5CC21B3E684400C2B66D /* UserManageSDK.h */,
 			);
 			path = UserManageSDK;
 			sourceTree = "<group>";
@@ -462,9 +462,9 @@
 		5087E77117EB970100C73F5D /* Icons */ = {
 			isa = PBXGroup;
 			children = (
-				343A0C101B3DAC75006C6A6C /* include */,
-				343A0C181B3DAC75006C6A6C /* libUserManageSDK.a */,
-				343A0C191B3DAC75006C6A6C /* UserManageSDK.bundle */,
+				345E5CBB1B3E684400C2B66D /* include */,
+				345E5CC31B3E684400C2B66D /* libUserManageSDK.a */,
+				345E5CC41B3E684400C2B66D /* UserManageSDK.bundle */,
 				521A8E6219F0C34300D177D7 /* Default-667h@2x.png */,
 				521A8E6319F0C34300D177D7 /* Default-736h@3x.png */,
 				5087E77217EB970100C73F5D /* Default-568h@2x.png */,
@@ -607,7 +607,7 @@
 				343021A01B2C7F2F00E14786 /* help.png in Resources */,
 				50EF629617ECD46A001EB2F8 /* Icon-40.png in Resources */,
 				34AF698A1B28214B006EFD4F /* lightning in Resources */,
-				343A0C1B1B3DAC75006C6A6C /* UserManageSDK.bundle in Resources */,
+				345E5CC61B3E684400C2B66D /* UserManageSDK.bundle in Resources */,
 				5087E78217EB970100C73F5D /* Icon-144.png in Resources */,
 				346C46261B2E5C1B003E299B /* brick in Resources */,
 				34FC7BA31B2C0D0B00B7AF76 /* building in Resources */,
@@ -648,6 +648,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3404D3301B3E576F00DD5106 /* AppController.mm in Sources */,
 				34FC7BA11B2C09FA00B7AF76 /* GameBackgroundLayer.cpp in Sources */,
 				3430219D1B2C745500E14786 /* MainScene.cpp in Sources */,
 				346C462A1B2E5C7E003E299B /* BrickSprite.cpp in Sources */,
@@ -657,7 +658,6 @@
 				34C3D1871B2F422200B0A1E8 /* GamePauseLayer.cpp in Sources */,
 				46880B8A19C43A87006E1F66 /* GameScene.cpp in Sources */,
 				34C513041B28744E007A4CF1 /* BirdSprite.cpp in Sources */,
-				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				346466D01B25C6BE00E26FB9 /* CircleAction.cpp in Sources */,
 				34769D5F1B2739900072AD18 /* SceneManager.cpp in Sources */,
 				34AF69911B28244E006EFD4F /* LightningSprite.cpp in Sources */,
@@ -733,6 +733,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"/Users/bin/Desktop/code/cocos2d-x-3.6/fly_and_spin/NewTestFramework",
 					"$(PROJECT_DIR)/ios/lib",
+					"$(PROJECT_DIR)/ios/lib/UserManageSDK",
 				);
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_IOS_BEGIN)",
@@ -770,6 +771,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"/Users/bin/Desktop/code/cocos2d-x-3.6/fly_and_spin/NewTestFramework",
 					"$(PROJECT_DIR)/ios/lib",
+					"$(PROJECT_DIR)/ios/lib/UserManageSDK",
 				);
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_IOS_BEGIN)",

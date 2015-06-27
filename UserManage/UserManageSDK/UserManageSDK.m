@@ -9,7 +9,9 @@
 #import "UserManageSDK.h"
 
 @implementation UserManageSDK
--(void)haha{
-    NSLog(@"haha");
+-(void)info{
+    NSLog(@"UserManageSDK");
+    NSLog(@"author: bin<bin@binsite.me>");
+
 }
 @end

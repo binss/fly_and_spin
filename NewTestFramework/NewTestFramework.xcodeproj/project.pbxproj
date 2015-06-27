@@ -44,14 +44,14 @@
 		343A0BCF1B3DA04F006C6A6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		343A0BD01B3DA04F006C6A6C /* NewTestFrameworkTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewTestFrameworkTests.m; sourceTree = "<group>"; };
 		343A0BF51B3DA568006C6A6C /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
-		343A0BF91B3DA604006C6A6C /* AdminUserListViewControllerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdminUserListViewControllerTableViewController.h; sourceTree = "<group>"; };
-		343A0BFA1B3DA604006C6A6C /* BINDatabaseHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BINDatabaseHandler.h; sourceTree = "<group>"; };
-		343A0BFB1B3DA604006C6A6C /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
-		343A0BFC1B3DA604006C6A6C /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
-		343A0BFD1B3DA604006C6A6C /* UserDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDetailViewController.h; sourceTree = "<group>"; };
-		343A0BFE1B3DA604006C6A6C /* UserManageSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserManageSDK.h; sourceTree = "<group>"; };
 		343A0BFF1B3DA604006C6A6C /* libUserManageSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUserManageSDK.a; sourceTree = SOURCE_ROOT; };
 		343A0C001B3DA604006C6A6C /* UserManageSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = UserManageSDK.bundle; sourceTree = SOURCE_ROOT; };
+		345E5C991B3E5A2D00C2B66D /* AdminUserListViewControllerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdminUserListViewControllerTableViewController.h; sourceTree = "<group>"; };
+		345E5C9A1B3E5A2D00C2B66D /* BINDatabaseHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BINDatabaseHandler.h; sourceTree = "<group>"; };
+		345E5C9B1B3E5A2D00C2B66D /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
+		345E5C9C1B3E5A2D00C2B66D /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
+		345E5C9D1B3E5A2D00C2B66D /* UserDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDetailViewController.h; sourceTree = "<group>"; };
+		345E5C9E1B3E5A2D00C2B66D /* UserManageSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserManageSDK.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +96,7 @@
 		343A0BB31B3DA04F006C6A6C /* NewTestFramework */ = {
 			isa = PBXGroup;
 			children = (
-				343A0BF71B3DA604006C6A6C /* include */,
+				345E5C971B3E5A2D00C2B66D /* include */,
 				343A0BFF1B3DA604006C6A6C /* libUserManageSDK.a */,
 				343A0C001B3DA604006C6A6C /* UserManageSDK.bundle */,
 				343A0BB81B3DA04F006C6A6C /* AppDelegate.h */,
@@ -137,23 +137,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		343A0BF71B3DA604006C6A6C /* include */ = {
+		345E5C971B3E5A2D00C2B66D /* include */ = {
 			isa = PBXGroup;
 			children = (
-				343A0BF81B3DA604006C6A6C /* UserManageSDK */,
+				345E5C981B3E5A2D00C2B66D /* UserManageSDK */,
 			);
 			path = include;
 			sourceTree = SOURCE_ROOT;
 		};
-		343A0BF81B3DA604006C6A6C /* UserManageSDK */ = {
+		345E5C981B3E5A2D00C2B66D /* UserManageSDK */ = {
 			isa = PBXGroup;
 			children = (
-				343A0BF91B3DA604006C6A6C /* AdminUserListViewControllerTableViewController.h */,
-				343A0BFA1B3DA604006C6A6C /* BINDatabaseHandler.h */,
-				343A0BFB1B3DA604006C6A6C /* SignInViewController.h */,
-				343A0BFC1B3DA604006C6A6C /* SignUpViewController.h */,
-				343A0BFD1B3DA604006C6A6C /* UserDetailViewController.h */,
-				343A0BFE1B3DA604006C6A6C /* UserManageSDK.h */,
+				345E5C991B3E5A2D00C2B66D /* AdminUserListViewControllerTableViewController.h */,
+				345E5C9A1B3E5A2D00C2B66D /* BINDatabaseHandler.h */,
+				345E5C9B1B3E5A2D00C2B66D /* SignInViewController.h */,
+				345E5C9C1B3E5A2D00C2B66D /* SignUpViewController.h */,
+				345E5C9D1B3E5A2D00C2B66D /* UserDetailViewController.h */,
+				345E5C9E1B3E5A2D00C2B66D /* UserManageSDK.h */,
 			);
 			path = UserManageSDK;
 			sourceTree = "<group>";

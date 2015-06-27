@@ -27,6 +27,8 @@
     self.window.rootViewController = [mainStoryboard instantiateInitialViewController];
     [self.window makeKeyAndVisible];
     
+     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(startGameCallBack:) name:@"StartGame" object:nil];
+    
     return YES;
 }
 
@@ -52,4 +54,12 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+
+-(void)startGameCallBack:(NSNotification*)notification{
+    NSString *nameString = [notification name];
+    NSString *objectString = [notification object];
+    NSDictionary *userInfo = [notification userInfo];
+
+    NSLog(@"Notification name = %@, object = %@, username = %@, name = %@",nameString, objectString, [userInfo objectForKey:@"username"], [userInfo objectForKey:@"name"]);
+}
 @end

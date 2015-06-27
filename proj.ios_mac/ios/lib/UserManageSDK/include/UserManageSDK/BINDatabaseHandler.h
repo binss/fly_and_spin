@@ -11,11 +11,9 @@
 
 @interface BINDatabaseHandler : NSObject{
     sqlite3 *db;
-    NSString * user;
-    NSString * image;
 }
 + (BINDatabaseHandler *)databaseHandler;
-- (BOOL)signinVerify:(NSString*)username withPassword:(NSString*)password;
+- (NSDictionary *)signin:(NSString*)username withPassword:(NSString*)password;
 - (BOOL)signupVerify:(NSString*)username;
 
 - (BOOL)signup:(NSString*)username withPassword:(NSString*)password withName:(NSString*)name;

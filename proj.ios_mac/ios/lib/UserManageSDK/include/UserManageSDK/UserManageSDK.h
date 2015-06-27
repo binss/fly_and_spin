@@ -7,7 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SignInViewController.h"
+#import "SignUpViewController.h"
+#import "BINDatabaseHandler.h"
+#import "UserDetailViewController.h"
+#import "AdminUserListViewControllerTableViewController.h"
 
 @interface UserManageSDK : NSObject
--(void)haha;
+-(void)info;
 @end

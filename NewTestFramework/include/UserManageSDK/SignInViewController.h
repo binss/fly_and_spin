@@ -10,12 +10,13 @@
 
 @interface SignInViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
-
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (weak, nonatomic) IBOutlet UIButton *signButton;
-- (IBAction)signButtonPressed:(UIButton *)sender;
 
+- (IBAction)signButtonPressed:(UIButton *)sender;
 - (IBAction)usernameEditingChanged:(UITextField *)sender;
 - (IBAction)passwordEditingChanged:(UITextField *)sender;
-- (void)haha;
+
+@property (strong,nonatomic) NSDictionary *user;
+
 @end

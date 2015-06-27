@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3404D3311B3E57CC00DD5106 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34ED12541B3A844600D49ABF /* Main.storyboard */; };
+		3404D3321B3E57E100DD5106 /* UserDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 343A0A421B3D0E42006C6A6C /* UserDetailViewController.m */; };
 		343A0A401B3CE3BA006C6A6C /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 343A0A3F1B3CE3BA006C6A6C /* SignUpViewController.m */; };
 		343A0A431B3D0E42006C6A6C /* UserDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 343A0A421B3D0E42006C6A6C /* UserDetailViewController.m */; };
 		343A0A491B3D4B3A006C6A6C /* button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 343A0A481B3D4B3A006C6A6C /* button@2x.png */; };
@@ -14,7 +16,6 @@
 		343A0B751B3D96D7006C6A6C /* UserManageSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 343A0B741B3D96D7006C6A6C /* UserManageSDK.m */; };
 		343A0B7B1B3D96D8006C6A6C /* libUserManageSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 343A0B701B3D96D7006C6A6C /* libUserManageSDK.a */; };
 		343A0B891B3D97A7006C6A6C /* SignInViewController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34ED12701B3A8CE000D49ABF /* SignInViewController.h */; };
-		343A0B911B3D99CE006C6A6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34ED12541B3A844600D49ABF /* Main.storyboard */; };
 		343A0B9D1B3D9C73006C6A6C /* button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 343A0A481B3D4B3A006C6A6C /* button@2x.png */; };
 		343A0B9F1B3D9C8C006C6A6C /* BINDatabaseHandler.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34ED12731B3A91CC00D49ABF /* BINDatabaseHandler.h */; };
 		343A0BA01B3D9C8C006C6A6C /* AdminUserListViewControllerTableViewController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34ED12781B3A9E2400D49ABF /* AdminUserListViewControllerTableViewController.h */; };
@@ -24,11 +25,10 @@
 		343A0BE81B3DA4C8006C6A6C /* AdminUserListViewControllerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34ED12791B3A9E2400D49ABF /* AdminUserListViewControllerTableViewController.m */; };
 		343A0BE91B3DA4C8006C6A6C /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34ED12711B3A8CE000D49ABF /* SignInViewController.m */; };
 		343A0BEA1B3DA4C8006C6A6C /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 343A0A3F1B3CE3BA006C6A6C /* SignUpViewController.m */; };
-		343A0BEB1B3DA4C8006C6A6C /* UserDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 343A0A421B3D0E42006C6A6C /* UserDetailViewController.m */; };
-		343A0BF41B3DA533006C6A6C /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 34ED12761B3A93A200D49ABF /* libsqlite3.0.dylib */; };
+		345E5CAC1B3E670B00C2B66D /* no_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 345E5CAB1B3E670B00C2B66D /* no_image@2x.png */; };
+		345E5CAD1B3E676F00C2B66D /* no_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 345E5CAB1B3E670B00C2B66D /* no_image@2x.png */; };
 		34ED124D1B3A844600D49ABF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 34ED124C1B3A844600D49ABF /* main.m */; };
 		34ED12501B3A844600D49ABF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 34ED124F1B3A844600D49ABF /* AppDelegate.m */; };
-		34ED12531B3A844600D49ABF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34ED12521B3A844600D49ABF /* ViewController.m */; };
 		34ED12561B3A844600D49ABF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34ED12541B3A844600D49ABF /* Main.storyboard */; };
 		34ED12581B3A844600D49ABF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34ED12571B3A844600D49ABF /* Images.xcassets */; };
 		34ED125B1B3A844600D49ABF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34ED12591B3A844600D49ABF /* LaunchScreen.xib */; };
@@ -105,13 +105,12 @@
 		343A0B741B3D96D7006C6A6C /* UserManageSDK.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserManageSDK.m; sourceTree = "<group>"; };
 		343A0B7A1B3D96D7006C6A6C /* UserManageSDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UserManageSDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		343A0B801B3D96D8006C6A6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		345E5CAB1B3E670B00C2B66D /* no_image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no_image@2x.png"; sourceTree = "<group>"; };
 		34ED12471B3A844600D49ABF /* UserManage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UserManage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34ED124B1B3A844600D49ABF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34ED124C1B3A844600D49ABF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		34ED124E1B3A844600D49ABF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		34ED124F1B3A844600D49ABF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		34ED12511B3A844600D49ABF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		34ED12521B3A844600D49ABF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		34ED12551B3A844600D49ABF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		34ED12571B3A844600D49ABF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		34ED125A1B3A844600D49ABF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -137,7 +136,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				343A0BF41B3DA533006C6A6C /* libsqlite3.0.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				343A0A481B3D4B3A006C6A6C /* button@2x.png */,
+				345E5CAB1B3E670B00C2B66D /* no_image@2x.png */,
 			);
 			path = MyResources;
 			sourceTree = SOURCE_ROOT;
@@ -255,8 +254,6 @@
 			children = (
 				34ED124E1B3A844600D49ABF /* AppDelegate.h */,
 				34ED124F1B3A844600D49ABF /* AppDelegate.m */,
-				34ED12511B3A844600D49ABF /* ViewController.h */,
-				34ED12521B3A844600D49ABF /* ViewController.m */,
 				34ED12731B3A91CC00D49ABF /* BINDatabaseHandler.h */,
 				34ED12741B3A91CC00D49ABF /* BINDatabaseHandler.m */,
 				34ED12781B3A9E2400D49ABF /* AdminUserListViewControllerTableViewController.h */,
@@ -431,8 +428,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3404D3311B3E57CC00DD5106 /* Main.storyboard in Resources */,
+				345E5CAD1B3E676F00C2B66D /* no_image@2x.png in Resources */,
 				343A0B9D1B3D9C73006C6A6C /* button@2x.png in Resources */,
-				343A0B911B3D99CE006C6A6C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,6 +449,7 @@
 				34ED125B1B3A844600D49ABF /* LaunchScreen.xib in Resources */,
 				343A0A491B3D4B3A006C6A6C /* button@2x.png in Resources */,
 				34ED12581B3A844600D49ABF /* Images.xcassets in Resources */,
+				345E5CAC1B3E670B00C2B66D /* no_image@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,11 +474,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3404D3321B3E57E100DD5106 /* UserDetailViewController.m in Sources */,
 				343A0BE71B3DA4C8006C6A6C /* BINDatabaseHandler.m in Sources */,
 				343A0BE81B3DA4C8006C6A6C /* AdminUserListViewControllerTableViewController.m in Sources */,
 				343A0BE91B3DA4C8006C6A6C /* SignInViewController.m in Sources */,
 				343A0BEA1B3DA4C8006C6A6C /* SignUpViewController.m in Sources */,
-				343A0BEB1B3DA4C8006C6A6C /* UserDetailViewController.m in Sources */,
 				343A0B751B3D96D7006C6A6C /* UserManageSDK.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -497,7 +496,6 @@
 			files = (
 				34ED12721B3A8CE000D49ABF /* SignInViewController.m in Sources */,
 				34ED12751B3A91CC00D49ABF /* BINDatabaseHandler.m in Sources */,
-				34ED12531B3A844600D49ABF /* ViewController.m in Sources */,
 				34ED127A1B3A9E2400D49ABF /* AdminUserListViewControllerTableViewController.m in Sources */,
 				34ED12501B3A844600D49ABF /* AppDelegate.m in Sources */,
 				343A0A401B3CE3BA006C6A6C /* SignUpViewController.m in Sources */,
