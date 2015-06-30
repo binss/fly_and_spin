@@ -8,6 +8,8 @@
         <scene sceneID="dkQ-BR-wR2">
             <objects>
                 <navigationController id="4kb-3Y-n2Y" sceneMemberID="viewController">
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="trc-xk-pDa">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -18,12 +20,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Ho-tO-dUv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1232" y="237"/>
+            <point key="canvasLocation" x="-1188.5" y="220.5"/>
         </scene>
         <!--登录-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="SignInViewController" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="BINSignInViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -98,19 +100,19 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-742.5" y="244.5"/>
+            <point key="canvasLocation" x="-732.5" y="220.5"/>
         </scene>
         <!--用户列表-->
         <scene sceneID="l8r-5e-1EV">
             <objects>
-                <tableViewController id="f5k-9L-ug2" customClass="AdminUserListViewControllerTableViewController" sceneMemberID="viewController">
+                <tableViewController id="f5k-9L-ug2" customClass="BINAdminUserListViewControllerTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="L2i-56-RIK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="dld-ke-Gwf">
-                                <rect key="frame" x="0.0" y="22" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="86" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dld-ke-Gwf" id="puB-83-AxK">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -138,12 +140,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bd8-HC-9SW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1184" y="1021"/>
+            <point key="canvasLocation" x="-1188.5" y="1032.5"/>
         </scene>
         <!--详细信息-->
         <scene sceneID="CL1-kD-Gbs">
             <objects>
-                <viewController id="bvS-hj-3p1" customClass="UserDetailViewController" sceneMemberID="viewController">
+                <viewController id="bvS-hj-3p1" customClass="BINUserDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IJY-p6-gaN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -231,12 +233,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZVv-SM-hxw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-240.5" y="1020.5"/>
+            <point key="canvasLocation" x="-48.5" y="1032.5"/>
         </scene>
         <!--注册-->
         <scene sceneID="dOM-Lq-vMV">
             <objects>
-                <viewController id="XwF-Pr-6Ao" customClass="SignUpViewController" sceneMemberID="viewController">
+                <viewController id="XwF-Pr-6Ao" customClass="BINSignUpViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ehz-ij-ODs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -316,7 +318,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lAI-K1-ehP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="59.5" y="244.5"/>
+            <point key="canvasLocation" x="13.5" y="220.5"/>
         </scene>
     </scenes>
     <resources>

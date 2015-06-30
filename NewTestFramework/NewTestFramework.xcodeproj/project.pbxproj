@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3411B2E41B4298C00025DC30 /* libUserManageSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3411B2E21B4298C00025DC30 /* libUserManageSDK.a */; };
+		3411B2E51B4298C00025DC30 /* UserManageSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3411B2E31B4298C00025DC30 /* UserManageSDK.bundle */; };
 		343A0BB71B3DA04F006C6A6C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 343A0BB61B3DA04F006C6A6C /* main.m */; };
 		343A0BBA1B3DA04F006C6A6C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 343A0BB91B3DA04F006C6A6C /* AppDelegate.m */; };
 		343A0BBD1B3DA04F006C6A6C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 343A0BBC1B3DA04F006C6A6C /* ViewController.m */; };
@@ -15,8 +17,6 @@
 		343A0BC51B3DA04F006C6A6C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 343A0BC31B3DA04F006C6A6C /* LaunchScreen.xib */; };
 		343A0BD11B3DA04F006C6A6C /* NewTestFrameworkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 343A0BD01B3DA04F006C6A6C /* NewTestFrameworkTests.m */; };
 		343A0BF61B3DA568006C6A6C /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 343A0BF51B3DA568006C6A6C /* libsqlite3.0.dylib */; };
-		343A0C011B3DA604006C6A6C /* libUserManageSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 343A0BFF1B3DA604006C6A6C /* libUserManageSDK.a */; };
-		343A0C021B3DA604006C6A6C /* UserManageSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 343A0C001B3DA604006C6A6C /* UserManageSDK.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +30,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3411B2DC1B4298C00025DC30 /* BINAdminUserListViewControllerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BINAdminUserListViewControllerTableViewController.h; sourceTree = "<group>"; };
+		3411B2DD1B4298C00025DC30 /* BINDatabaseHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BINDatabaseHandler.h; sourceTree = "<group>"; };
+		3411B2DE1B4298C00025DC30 /* BINSignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BINSignInViewController.h; sourceTree = "<group>"; };
+		3411B2DF1B4298C00025DC30 /* BINSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BINSignUpViewController.h; sourceTree = "<group>"; };
+		3411B2E01B4298C00025DC30 /* BINUserDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BINUserDetailViewController.h; sourceTree = "<group>"; };
+		3411B2E11B4298C00025DC30 /* UserManageSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserManageSDK.h; sourceTree = "<group>"; };
+		3411B2E21B4298C00025DC30 /* libUserManageSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUserManageSDK.a; sourceTree = SOURCE_ROOT; };
+		3411B2E31B4298C00025DC30 /* UserManageSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = UserManageSDK.bundle; sourceTree = SOURCE_ROOT; };
 		343A0BB11B3DA04F006C6A6C /* NewTestFramework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewTestFramework.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		343A0BB51B3DA04F006C6A6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		343A0BB61B3DA04F006C6A6C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -44,14 +52,6 @@
 		343A0BCF1B3DA04F006C6A6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		343A0BD01B3DA04F006C6A6C /* NewTestFrameworkTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewTestFrameworkTests.m; sourceTree = "<group>"; };
 		343A0BF51B3DA568006C6A6C /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
-		343A0BFF1B3DA604006C6A6C /* libUserManageSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUserManageSDK.a; sourceTree = SOURCE_ROOT; };
-		343A0C001B3DA604006C6A6C /* UserManageSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = UserManageSDK.bundle; sourceTree = SOURCE_ROOT; };
-		345E5C991B3E5A2D00C2B66D /* AdminUserListViewControllerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdminUserListViewControllerTableViewController.h; sourceTree = "<group>"; };
-		345E5C9A1B3E5A2D00C2B66D /* BINDatabaseHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BINDatabaseHandler.h; sourceTree = "<group>"; };
-		345E5C9B1B3E5A2D00C2B66D /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
-		345E5C9C1B3E5A2D00C2B66D /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
-		345E5C9D1B3E5A2D00C2B66D /* UserDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDetailViewController.h; sourceTree = "<group>"; };
-		345E5C9E1B3E5A2D00C2B66D /* UserManageSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserManageSDK.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				343A0C011B3DA604006C6A6C /* libUserManageSDK.a in Frameworks */,
+				3411B2E41B4298C00025DC30 /* libUserManageSDK.a in Frameworks */,
 				343A0BF61B3DA568006C6A6C /* libsqlite3.0.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -74,6 +74,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3411B2DA1B4298C00025DC30 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				3411B2DB1B4298C00025DC30 /* UserManageSDK */,
+			);
+			path = include;
+			sourceTree = SOURCE_ROOT;
+		};
+		3411B2DB1B4298C00025DC30 /* UserManageSDK */ = {
+			isa = PBXGroup;
+			children = (
+				3411B2DC1B4298C00025DC30 /* BINAdminUserListViewControllerTableViewController.h */,
+				3411B2DD1B4298C00025DC30 /* BINDatabaseHandler.h */,
+				3411B2DE1B4298C00025DC30 /* BINSignInViewController.h */,
+				3411B2DF1B4298C00025DC30 /* BINSignUpViewController.h */,
+				3411B2E01B4298C00025DC30 /* BINUserDetailViewController.h */,
+				3411B2E11B4298C00025DC30 /* UserManageSDK.h */,
+			);
+			path = UserManageSDK;
+			sourceTree = "<group>";
+		};
 		343A0BA81B3DA04F006C6A6C = {
 			isa = PBXGroup;
 			children = (
@@ -96,9 +117,9 @@
 		343A0BB31B3DA04F006C6A6C /* NewTestFramework */ = {
 			isa = PBXGroup;
 			children = (
-				345E5C971B3E5A2D00C2B66D /* include */,
-				343A0BFF1B3DA604006C6A6C /* libUserManageSDK.a */,
-				343A0C001B3DA604006C6A6C /* UserManageSDK.bundle */,
+				3411B2DA1B4298C00025DC30 /* include */,
+				3411B2E21B4298C00025DC30 /* libUserManageSDK.a */,
+				3411B2E31B4298C00025DC30 /* UserManageSDK.bundle */,
 				343A0BB81B3DA04F006C6A6C /* AppDelegate.h */,
 				343A0BB91B3DA04F006C6A6C /* AppDelegate.m */,
 				343A0BBB1B3DA04F006C6A6C /* ViewController.h */,
@@ -135,27 +156,6 @@
 				343A0BCF1B3DA04F006C6A6C /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		345E5C971B3E5A2D00C2B66D /* include */ = {
-			isa = PBXGroup;
-			children = (
-				345E5C981B3E5A2D00C2B66D /* UserManageSDK */,
-			);
-			path = include;
-			sourceTree = SOURCE_ROOT;
-		};
-		345E5C981B3E5A2D00C2B66D /* UserManageSDK */ = {
-			isa = PBXGroup;
-			children = (
-				345E5C991B3E5A2D00C2B66D /* AdminUserListViewControllerTableViewController.h */,
-				345E5C9A1B3E5A2D00C2B66D /* BINDatabaseHandler.h */,
-				345E5C9B1B3E5A2D00C2B66D /* SignInViewController.h */,
-				345E5C9C1B3E5A2D00C2B66D /* SignUpViewController.h */,
-				345E5C9D1B3E5A2D00C2B66D /* UserDetailViewController.h */,
-				345E5C9E1B3E5A2D00C2B66D /* UserManageSDK.h */,
-			);
-			path = UserManageSDK;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,7 +240,7 @@
 			files = (
 				343A0BC01B3DA04F006C6A6C /* Main.storyboard in Resources */,
 				343A0BC51B3DA04F006C6A6C /* LaunchScreen.xib in Resources */,
-				343A0C021B3DA604006C6A6C /* UserManageSDK.bundle in Resources */,
+				3411B2E51B4298C00025DC30 /* UserManageSDK.bundle in Resources */,
 				343A0BC21B3DA04F006C6A6C /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -43,14 +43,6 @@ static AppDelegate s_sharedApplication;
     // Add the view controller's view to the window and display.
     window = [[UIWindow alloc] initWithFrame: [[UIScreen mainScreen] bounds]];
 
-    
-    [SignInViewController class];
-    [SignUpViewController class];
-    [BINDatabaseHandler class];
-    [UserDetailViewController class];
-    [AdminUserListViewControllerTableViewController class];
-    
-    
     NSBundle *myBundle = [NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:@"UserManageSDK" ofType:@"bundle"]];
 //    NSLog(@"%@", myBundle);
     UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:myBundle];

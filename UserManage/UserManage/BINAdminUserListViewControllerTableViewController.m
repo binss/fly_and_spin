@@ -1,19 +1,19 @@
 //
-//  AdminUserListViewControllerTableViewController.m
+//  BINAdminUserListViewControllerTableViewController.m
 //  UserManage
 //
 //  Created by bin on 15/6/24.
 //  Copyright (c) 2015年 bin. All rights reserved.
 //
 
-#import "AdminUserListViewControllerTableViewController.h"
+#import "BINAdminUserListViewControllerTableViewController.h"
 #import "BINDatabaseHandler.h"
 
-@interface AdminUserListViewControllerTableViewController ()
+@interface BINAdminUserListViewControllerTableViewController ()
 
 @end
 
-@implementation AdminUserListViewControllerTableViewController
+@implementation BINAdminUserListViewControllerTableViewController
 @synthesize userList;
 @synthesize user;
 

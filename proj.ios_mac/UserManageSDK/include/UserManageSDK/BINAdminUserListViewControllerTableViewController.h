@@ -1,5 +1,5 @@
 //
-//  AdminUserListViewControllerTableViewController.h
+//  BINAdminUserListViewControllerTableViewController.h
 //  UserManage
 //
 //  Created by bin on 15/6/24.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AdminUserListViewControllerTableViewController : UITableViewController
+@interface BINAdminUserListViewControllerTableViewController : UITableViewController
 @property (strong,nonatomic) NSMutableArray *userList;
 @property (strong,nonatomic) NSDictionary *user;
 @end

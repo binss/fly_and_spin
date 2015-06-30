@@ -1,19 +1,19 @@
 //
-//  SignUpViewController.m
+//  BINSignUpViewController.m
 //  UserManage
 //
 //  Created by bin on 15/6/26.
 //  Copyright (c) 2015年 bin. All rights reserved.
 //
 
-#import "SignUpViewController.h"
+#import "BINSignUpViewController.h"
 #import "BINDatabaseHandler.h"
 
-@interface SignUpViewController ()
+@interface BINSignUpViewController ()
 
 @end
 
-@implementation SignUpViewController
+@implementation BINSignUpViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

@@ -1,5 +1,5 @@
 //
-//  SignUpViewController.h
+//  BINSignUpViewController.h
 //  UserManage
 //
 //  Created by bin on 15/6/26.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SignUpViewController : UIViewController<UIAlertViewDelegate>
+@interface BINSignUpViewController : UIViewController<UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;

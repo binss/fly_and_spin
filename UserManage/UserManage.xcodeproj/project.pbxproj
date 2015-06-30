@@ -8,23 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		3404D3311B3E57CC00DD5106 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34ED12541B3A844600D49ABF /* Main.storyboard */; };
-		3404D3321B3E57E100DD5106 /* UserDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 343A0A421B3D0E42006C6A6C /* UserDetailViewController.m */; };
-		343A0A401B3CE3BA006C6A6C /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 343A0A3F1B3CE3BA006C6A6C /* SignUpViewController.m */; };
-		343A0A431B3D0E42006C6A6C /* UserDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 343A0A421B3D0E42006C6A6C /* UserDetailViewController.m */; };
+		3404D3321B3E57E100DD5106 /* BINUserDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 343A0A421B3D0E42006C6A6C /* BINUserDetailViewController.m */; };
+		343A0A401B3CE3BA006C6A6C /* BINSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 343A0A3F1B3CE3BA006C6A6C /* BINSignUpViewController.m */; };
+		343A0A431B3D0E42006C6A6C /* BINUserDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 343A0A421B3D0E42006C6A6C /* BINUserDetailViewController.m */; };
 		343A0A491B3D4B3A006C6A6C /* button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 343A0A481B3D4B3A006C6A6C /* button@2x.png */; };
 		343A0B731B3D96D7006C6A6C /* UserManageSDK.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 343A0B721B3D96D7006C6A6C /* UserManageSDK.h */; };
 		343A0B751B3D96D7006C6A6C /* UserManageSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 343A0B741B3D96D7006C6A6C /* UserManageSDK.m */; };
 		343A0B7B1B3D96D8006C6A6C /* libUserManageSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 343A0B701B3D96D7006C6A6C /* libUserManageSDK.a */; };
-		343A0B891B3D97A7006C6A6C /* SignInViewController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34ED12701B3A8CE000D49ABF /* SignInViewController.h */; };
+		343A0B891B3D97A7006C6A6C /* BINSignInViewController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34ED12701B3A8CE000D49ABF /* BINSignInViewController.h */; };
 		343A0B9D1B3D9C73006C6A6C /* button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 343A0A481B3D4B3A006C6A6C /* button@2x.png */; };
 		343A0B9F1B3D9C8C006C6A6C /* BINDatabaseHandler.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34ED12731B3A91CC00D49ABF /* BINDatabaseHandler.h */; };
-		343A0BA01B3D9C8C006C6A6C /* AdminUserListViewControllerTableViewController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34ED12781B3A9E2400D49ABF /* AdminUserListViewControllerTableViewController.h */; };
-		343A0BA11B3D9C98006C6A6C /* SignUpViewController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 343A0A3E1B3CE3BA006C6A6C /* SignUpViewController.h */; };
-		343A0BA21B3D9C98006C6A6C /* UserDetailViewController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 343A0A411B3D0E42006C6A6C /* UserDetailViewController.h */; };
+		343A0BA01B3D9C8C006C6A6C /* BINAdminUserListViewControllerTableViewController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34ED12781B3A9E2400D49ABF /* BINAdminUserListViewControllerTableViewController.h */; };
+		343A0BA11B3D9C98006C6A6C /* BINSignUpViewController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 343A0A3E1B3CE3BA006C6A6C /* BINSignUpViewController.h */; };
+		343A0BA21B3D9C98006C6A6C /* BINUserDetailViewController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 343A0A411B3D0E42006C6A6C /* BINUserDetailViewController.h */; };
 		343A0BE71B3DA4C8006C6A6C /* BINDatabaseHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 34ED12741B3A91CC00D49ABF /* BINDatabaseHandler.m */; };
-		343A0BE81B3DA4C8006C6A6C /* AdminUserListViewControllerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34ED12791B3A9E2400D49ABF /* AdminUserListViewControllerTableViewController.m */; };
-		343A0BE91B3DA4C8006C6A6C /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34ED12711B3A8CE000D49ABF /* SignInViewController.m */; };
-		343A0BEA1B3DA4C8006C6A6C /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 343A0A3F1B3CE3BA006C6A6C /* SignUpViewController.m */; };
+		343A0BE81B3DA4C8006C6A6C /* BINAdminUserListViewControllerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34ED12791B3A9E2400D49ABF /* BINAdminUserListViewControllerTableViewController.m */; };
+		343A0BE91B3DA4C8006C6A6C /* BINSignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34ED12711B3A8CE000D49ABF /* BINSignInViewController.m */; };
+		343A0BEA1B3DA4C8006C6A6C /* BINSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 343A0A3F1B3CE3BA006C6A6C /* BINSignUpViewController.m */; };
 		345E5CAC1B3E670B00C2B66D /* no_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 345E5CAB1B3E670B00C2B66D /* no_image@2x.png */; };
 		345E5CAD1B3E676F00C2B66D /* no_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 345E5CAB1B3E670B00C2B66D /* no_image@2x.png */; };
 		34ED124D1B3A844600D49ABF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 34ED124C1B3A844600D49ABF /* main.m */; };
@@ -32,10 +32,10 @@
 		34ED12561B3A844600D49ABF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34ED12541B3A844600D49ABF /* Main.storyboard */; };
 		34ED12581B3A844600D49ABF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34ED12571B3A844600D49ABF /* Images.xcassets */; };
 		34ED125B1B3A844600D49ABF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34ED12591B3A844600D49ABF /* LaunchScreen.xib */; };
-		34ED12721B3A8CE000D49ABF /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34ED12711B3A8CE000D49ABF /* SignInViewController.m */; };
+		34ED12721B3A8CE000D49ABF /* BINSignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34ED12711B3A8CE000D49ABF /* BINSignInViewController.m */; };
 		34ED12751B3A91CC00D49ABF /* BINDatabaseHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 34ED12741B3A91CC00D49ABF /* BINDatabaseHandler.m */; };
 		34ED12771B3A93A200D49ABF /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 34ED12761B3A93A200D49ABF /* libsqlite3.0.dylib */; };
-		34ED127A1B3A9E2400D49ABF /* AdminUserListViewControllerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34ED12791B3A9E2400D49ABF /* AdminUserListViewControllerTableViewController.m */; };
+		34ED127A1B3A9E2400D49ABF /* BINAdminUserListViewControllerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34ED12791B3A9E2400D49ABF /* BINAdminUserListViewControllerTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,11 +79,11 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				343A0BA11B3D9C98006C6A6C /* SignUpViewController.h in CopyFiles */,
-				343A0BA21B3D9C98006C6A6C /* UserDetailViewController.h in CopyFiles */,
+				343A0BA11B3D9C98006C6A6C /* BINSignUpViewController.h in CopyFiles */,
+				343A0BA21B3D9C98006C6A6C /* BINUserDetailViewController.h in CopyFiles */,
 				343A0B9F1B3D9C8C006C6A6C /* BINDatabaseHandler.h in CopyFiles */,
-				343A0BA01B3D9C8C006C6A6C /* AdminUserListViewControllerTableViewController.h in CopyFiles */,
-				343A0B891B3D97A7006C6A6C /* SignInViewController.h in CopyFiles */,
+				343A0BA01B3D9C8C006C6A6C /* BINAdminUserListViewControllerTableViewController.h in CopyFiles */,
+				343A0B891B3D97A7006C6A6C /* BINSignInViewController.h in CopyFiles */,
 				343A0B731B3D96D7006C6A6C /* UserManageSDK.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -91,10 +91,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		343A0A3E1B3CE3BA006C6A6C /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
-		343A0A3F1B3CE3BA006C6A6C /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
-		343A0A411B3D0E42006C6A6C /* UserDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDetailViewController.h; sourceTree = "<group>"; };
-		343A0A421B3D0E42006C6A6C /* UserDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDetailViewController.m; sourceTree = "<group>"; };
+		343A0A3E1B3CE3BA006C6A6C /* BINSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BINSignUpViewController.h; sourceTree = "<group>"; };
+		343A0A3F1B3CE3BA006C6A6C /* BINSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BINSignUpViewController.m; sourceTree = "<group>"; };
+		343A0A411B3D0E42006C6A6C /* BINUserDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BINUserDetailViewController.h; sourceTree = "<group>"; };
+		343A0A421B3D0E42006C6A6C /* BINUserDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BINUserDetailViewController.m; sourceTree = "<group>"; };
 		343A0A481B3D4B3A006C6A6C /* button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button@2x.png"; sourceTree = "<group>"; };
 		343A0AB41B3D6C0B006C6A6C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		343A0AB51B3D6C0B006C6A6C /* UserManageTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserManageTests.m; sourceTree = "<group>"; };
@@ -115,13 +115,13 @@
 		34ED12571B3A844600D49ABF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		34ED125A1B3A844600D49ABF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		34ED12601B3A844600D49ABF /* UserManageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UserManageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		34ED12701B3A8CE000D49ABF /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
-		34ED12711B3A8CE000D49ABF /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
+		34ED12701B3A8CE000D49ABF /* BINSignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BINSignInViewController.h; sourceTree = "<group>"; };
+		34ED12711B3A8CE000D49ABF /* BINSignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BINSignInViewController.m; sourceTree = "<group>"; };
 		34ED12731B3A91CC00D49ABF /* BINDatabaseHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BINDatabaseHandler.h; sourceTree = "<group>"; };
 		34ED12741B3A91CC00D49ABF /* BINDatabaseHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BINDatabaseHandler.m; sourceTree = "<group>"; };
 		34ED12761B3A93A200D49ABF /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
-		34ED12781B3A9E2400D49ABF /* AdminUserListViewControllerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdminUserListViewControllerTableViewController.h; sourceTree = "<group>"; };
-		34ED12791B3A9E2400D49ABF /* AdminUserListViewControllerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdminUserListViewControllerTableViewController.m; sourceTree = "<group>"; };
+		34ED12781B3A9E2400D49ABF /* BINAdminUserListViewControllerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BINAdminUserListViewControllerTableViewController.h; sourceTree = "<group>"; };
+		34ED12791B3A9E2400D49ABF /* BINAdminUserListViewControllerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BINAdminUserListViewControllerTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,14 +256,14 @@
 				34ED124F1B3A844600D49ABF /* AppDelegate.m */,
 				34ED12731B3A91CC00D49ABF /* BINDatabaseHandler.h */,
 				34ED12741B3A91CC00D49ABF /* BINDatabaseHandler.m */,
-				34ED12781B3A9E2400D49ABF /* AdminUserListViewControllerTableViewController.h */,
-				34ED12791B3A9E2400D49ABF /* AdminUserListViewControllerTableViewController.m */,
-				34ED12701B3A8CE000D49ABF /* SignInViewController.h */,
-				34ED12711B3A8CE000D49ABF /* SignInViewController.m */,
-				343A0A3E1B3CE3BA006C6A6C /* SignUpViewController.h */,
-				343A0A3F1B3CE3BA006C6A6C /* SignUpViewController.m */,
-				343A0A411B3D0E42006C6A6C /* UserDetailViewController.h */,
-				343A0A421B3D0E42006C6A6C /* UserDetailViewController.m */,
+				34ED12781B3A9E2400D49ABF /* BINAdminUserListViewControllerTableViewController.h */,
+				34ED12791B3A9E2400D49ABF /* BINAdminUserListViewControllerTableViewController.m */,
+				34ED12701B3A8CE000D49ABF /* BINSignInViewController.h */,
+				34ED12711B3A8CE000D49ABF /* BINSignInViewController.m */,
+				343A0A3E1B3CE3BA006C6A6C /* BINSignUpViewController.h */,
+				343A0A3F1B3CE3BA006C6A6C /* BINSignUpViewController.m */,
+				343A0A411B3D0E42006C6A6C /* BINUserDetailViewController.h */,
+				343A0A421B3D0E42006C6A6C /* BINUserDetailViewController.m */,
 				34ED12541B3A844600D49ABF /* Main.storyboard */,
 				34ED12571B3A844600D49ABF /* Images.xcassets */,
 				34ED12591B3A844600D49ABF /* LaunchScreen.xib */,
@@ -474,11 +474,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3404D3321B3E57E100DD5106 /* UserDetailViewController.m in Sources */,
+				3404D3321B3E57E100DD5106 /* BINUserDetailViewController.m in Sources */,
 				343A0BE71B3DA4C8006C6A6C /* BINDatabaseHandler.m in Sources */,
-				343A0BE81B3DA4C8006C6A6C /* AdminUserListViewControllerTableViewController.m in Sources */,
-				343A0BE91B3DA4C8006C6A6C /* SignInViewController.m in Sources */,
-				343A0BEA1B3DA4C8006C6A6C /* SignUpViewController.m in Sources */,
+				343A0BE81B3DA4C8006C6A6C /* BINAdminUserListViewControllerTableViewController.m in Sources */,
+				343A0BE91B3DA4C8006C6A6C /* BINSignInViewController.m in Sources */,
+				343A0BEA1B3DA4C8006C6A6C /* BINSignUpViewController.m in Sources */,
 				343A0B751B3D96D7006C6A6C /* UserManageSDK.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -494,12 +494,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34ED12721B3A8CE000D49ABF /* SignInViewController.m in Sources */,
+				34ED12721B3A8CE000D49ABF /* BINSignInViewController.m in Sources */,
 				34ED12751B3A91CC00D49ABF /* BINDatabaseHandler.m in Sources */,
-				34ED127A1B3A9E2400D49ABF /* AdminUserListViewControllerTableViewController.m in Sources */,
+				34ED127A1B3A9E2400D49ABF /* BINAdminUserListViewControllerTableViewController.m in Sources */,
 				34ED12501B3A844600D49ABF /* AppDelegate.m in Sources */,
-				343A0A401B3CE3BA006C6A6C /* SignUpViewController.m in Sources */,
-				343A0A431B3D0E42006C6A6C /* UserDetailViewController.m in Sources */,
+				343A0A401B3CE3BA006C6A6C /* BINSignUpViewController.m in Sources */,
+				343A0A431B3D0E42006C6A6C /* BINUserDetailViewController.m in Sources */,
 				34ED124D1B3A844600D49ABF /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

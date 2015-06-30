@@ -1,5 +1,5 @@
 //
-//  UserDetailViewController.h
+//  BINUserDetailViewController.h
 //  UserManage
 //
 //  Created by bin on 15/6/26.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UserDetailViewController : UIViewController<UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIAlertViewDelegate>{
+@interface BINUserDetailViewController : UIViewController<UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIAlertViewDelegate>{
     NSString * username;
     NSString * name;
 

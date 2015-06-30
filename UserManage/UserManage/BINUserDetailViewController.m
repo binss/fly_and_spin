@@ -1,19 +1,19 @@
 //
-//  UserDetailViewController.m
+//  BINUserDetailViewController.m
 //  UserManage
 //
 //  Created by bin on 15/6/26.
 //  Copyright (c) 2015年 bin. All rights reserved.
 //
 
-#import "UserDetailViewController.h"
+#import "BINUserDetailViewController.h"
 #import "BINDatabaseHandler.h"
 
-@interface UserDetailViewController ()
+@interface BINUserDetailViewController ()
 
 @end
 
-@implementation UserDetailViewController
+@implementation BINUserDetailViewController
 @synthesize userDetail;
 
 - (void)viewDidLoad {
